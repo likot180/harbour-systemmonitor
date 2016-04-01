@@ -1,13 +1,26 @@
 #include "datasourcecell.h"
 
 #include <QDebug>
+#include <QDir>
+#include <QFile>
+#include <QString>
 
 DataSourceCell::DataSourceCell(SystemSnapshot *parent) :
     DataSource(parent)
 {
-    for (int i=0;i<=7;i++) {
-        m_sourcesRx.append(registerSystemSource(QString("/sys/class/net/rmnet%1/statistics/rx_bytes").arg(i)));
-        m_sourcesTx.append(registerSystemSource(QString("/sys/class/net/rmnet%1/statistics/tx_bytes").arg(i)));
+    QDir rmnet("/sys/class/net");
+    QStringList filters;
+    filters << "rmnet_usb*" << "rmnet?";
+    rmnet.setNameFilters(filters);
+
+    const QStringList files = rmnet.entryList();
+    QStringListIterator iterator(files);
+    QString fileName;
+    while ( iterator.hasNext() ) {
+        fileName = rmnet.absoluteFilePath(iterator.next());
+//        qDebug() << "Cell statistics:" << fileName;
+        m_sourcesRx.append(registerSystemSource(fileName + "/statistics/rx_bytes"));
+        m_sourcesTx.append(registerSystemSource(fileName + "/statistics/tx_bytes"));
     }
 
     connect(parent, SIGNAL(processSystemSnapshot()), SLOT(processSystemSnapshot()));
