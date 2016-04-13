@@ -162,7 +162,7 @@ Page {
                 axisY.units: "Kb"
                 valueTotal: true
                 valueConverter: function(value) {
-                    return (value/1000).toFixed(0);
+                    return (value/1000).toFixed(2);
                 }
 
                 onClicked: pageStack.push(Qt.resolvedUrl("CellPage.qml"), {deepView: settings.deepView})
