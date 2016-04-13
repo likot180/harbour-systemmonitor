@@ -18,6 +18,12 @@ ApplicationWindow
         property int coverGraphNum: 0
         property int updateInterval: 120
         property int archiveLength: 7
+
+        // settings used by battery discharge rate plot
+        property double batteryDischargeRateMinDt: 900.0
+        property double batteryDischargeRateMinChange: 1.0
+        property double batteryDischargeRateMaxY: 10.0
+        property bool batteryDischargeRateAutoScale: false
     }
 
     Component.onCompleted: {

@@ -23,7 +23,8 @@ SOURCES += \
     datasourcewlan.cpp \
     datasourcecell.cpp \
     datasourcememory.cpp \
-    systemsnapshot.cpp
+    systemsnapshot.cpp \
+    datasourcecpusleep.cpp
 
 HEADERS += \
     settings.h \
@@ -37,7 +38,8 @@ HEADERS += \
     datasourcewlan.h \
     datasourcecell.h \
     datasourcememory.h \
-    systemsnapshot.h
+    systemsnapshot.h \
+    datasourcecpusleep.h
 
 #OTHER_FILES += \
 #    net.thecust.systemmonitord.xml

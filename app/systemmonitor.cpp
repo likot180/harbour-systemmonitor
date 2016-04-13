@@ -1,6 +1,7 @@
 #include "systemmonitor.h"
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusReply>
+#include <algorithm>
 
 SystemMonitor::SystemMonitor(QObject *parent) :
     QObject(parent)
@@ -63,7 +64,7 @@ void SystemMonitor::getUnitProperties()
     }
 }
 
-void SystemMonitor::onPropertiesChanged(QString interface, QMap<QString,QVariant> changed, QStringList invalidated)
+void SystemMonitor::onPropertiesChanged(QString interface, QMap<QString,QVariant> /*changed*/, QStringList invalidated)
 {
     if (interface != "org.freedesktop.systemd1.Unit") {
         return;
@@ -154,6 +155,50 @@ QVariant SystemMonitor::getSystemData(const QList<DataSource::Type> &types, int 
     QVector<QVariantMap> data = m_storage.getSystemData(types, from, to);
     return QVariant::fromValue(filterData(data, from, to, width, avg));
 }
+
+QVariantList SystemMonitor::calculateDerivative(QVariantList dataPoints, double timeUnit, double minDt, double minChange)
+{
+    QList<QVariant> derivative;
+
+    if ( dataPoints.size() < 2 ) return derivative;
+
+    double x0 = -1;
+    int i0 = 0;
+    double y0 = 0; // to avoid the warning on unitialized use
+    for (int i=0; i < dataPoints.size(); ++i)
+    {
+        const QVariantMap point = dataPoints[i].value<QVariantMap>();
+        double x = point["x"].toDouble();
+        double y = point["y"].toDouble();
+
+        if ( isnan( y ) ) continue; // skipping NaN values
+
+        if (x0 < 0) // init starting from the first non-NaN value
+        {
+             x0 = x;
+             y0 = y;
+        }
+
+        if (x - x0 < minDt || fabs(y0-y) < minChange) continue; // too close in time - skipping to avoid too much jitter
+
+        double der = std::max( (y - y0) / (x - x0) * timeUnit, 0.0); // Graph plots non-negative values only
+
+        for (; i0 <= i; ++i0)
+        {
+            QVariantMap pt;
+            pt["x"] = dataPoints[i0].value<QVariantMap>()["x"].toInt();
+            pt["y"] = der;
+            derivative.append(pt);
+        }
+
+        x0 = x;
+        y0 = y;
+    }
+
+    return derivative;
+
+}
+
 
 QList<QVariant> SystemMonitor::filterData(const QVector<QVariantMap>& data, const QDateTime &from, const QDateTime &to, int width, bool avg)
 {

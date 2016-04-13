@@ -40,3 +40,6 @@ OTHER_FILES += \
     harbour-systemmonitor.desktop \
     harbour-systemmonitor.png
 
+DISTFILES += \
+    qml/pages/DerivativeSettings.qml
+

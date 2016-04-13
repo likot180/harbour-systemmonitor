@@ -4,6 +4,7 @@
 #include "datasourcecell.h"
 #include "datasourcewlan.h"
 #include "datasourcememory.h"
+#include "datasourcecpusleep.h"
 
 Service::Service(QObject *parent, Settings *settings) :
     SystemSnapshot(parent), m_settings(settings)
@@ -29,6 +30,7 @@ void Service::initDataSources()
     m_sources.append(new DataSourceWlan(this));
     m_sources.append(new DataSourceCell(this));
     m_sources.append(new DataSourceMemory(this));
+    m_sources.append(new DataSourceCpuSleep(this));
     //m_sources.append(new DataSourceTemp(this));
 
     foreach(const DataSource* source, m_sources) {

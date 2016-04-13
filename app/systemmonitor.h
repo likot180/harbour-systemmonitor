@@ -41,6 +41,8 @@ public slots:
 
     QVariant getSystemGraph(QVariantList types, int depth, int width, bool avg);
 
+    QVariantList calculateDerivative(QVariantList dataPoints, double timeUnit, double minDt, double minChange);
+
 private slots:
     void getUnitProperties();
     void onPropertiesChanged(QString interface, QMap<QString, QVariant> changed, QStringList invalidated);

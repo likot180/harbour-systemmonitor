@@ -30,7 +30,8 @@ public:
         NetworkWlanRx,
         NetworkCellTx,
         NetworkCellRx,
-        BatteryPercentage = 400
+        BatteryPercentage = 400,
+        CpuSleep = 500
     };
 
     DataSource(SystemSnapshot *parent = 0);
