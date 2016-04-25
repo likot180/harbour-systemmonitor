@@ -27,7 +27,7 @@ void DataSourceCpuSleep::processSystemSnapshot()
     double db = b.tv_sec - m_boot.tv_sec + 1e-9 * (b.tv_nsec - m_boot.tv_nsec);
     double dm = m.tv_sec - m_mono.tv_sec + 1e-9 * (m.tv_nsec - m_mono.tv_nsec);
     double sleep = (db-dm) / db * 100;
-    qDebug() << "Sleep: " << dm << " / " << db << ": " << sleep;
+    //qDebug() << "Sleep: " << dm << " / " << db << ": " << sleep;
 
     m_boot = b;
     m_mono = m;
