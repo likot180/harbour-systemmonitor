@@ -36,7 +36,7 @@ Page {
             Label {
                 x: Theme.paddingLarge
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: APP_VERSION
+                text: APP_VERSION + " / Unofficial"
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeSmall
             }
