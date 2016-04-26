@@ -71,10 +71,11 @@ Page {
                 dataType: [DataSource.NetworkWlanRx]
                 dataDepth: deepView
                 scale: true
-                axisY.units: "Kb"
-                valueTotal: true
+                axisY.units: "kB/s"
+                //valueTotal: false
+                dataAvg: true
                 valueConverter: function(value) {
-                    return (value/1000).toFixed(0);
+                    return (value/1000.).toFixed(2);
                 }
 
                 clickEnabled: false
@@ -87,10 +88,11 @@ Page {
                 dataType: [DataSource.NetworkWlanTx]
                 dataDepth: deepView
                 scale: true
-                axisY.units: "Kb"
-                valueTotal: true
+                axisY.units: "kB/s"
+                //valueTotal: false
+                dataAvg: true
                 valueConverter: function(value) {
-                    return (value/1000).toFixed(0);
+                    return (value/1000.).toFixed(2);
                 }
 
                 clickEnabled: false

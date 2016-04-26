@@ -17,18 +17,19 @@ void DataSourceWlan::processSystemSnapshot()
 {
     qDebug() << "Network WLAN data";
 
-    int deltaRx = 0;
-    int deltaTx = 0;
+    long long deltaRx = 0;
+    long long deltaTx = 0;
 
-    QVector<int> bytesRx;
-    QVector<int> bytesTx;
+    QVector<unsigned long long> bytesRx;
+    QVector<unsigned long long> bytesTx;
+    bool rxOk, txOk;
 
-    bytesRx.append(QString(getSystemData(m_sourceRx)).toInt());
-    bytesTx.append(QString(getSystemData(m_sourceTx)).toInt());
+    bytesRx.append(QString(getSystemData(m_sourceRx)).toULongLong(&rxOk));
+    bytesTx.append(QString(getSystemData(m_sourceTx)).toULongLong(&txOk));
 
     if (m_prevBytesRx.size() == bytesRx.size()) {
         for (int i=0;i<bytesRx.size();i++) {
-            if (bytesRx[i] != -1 && m_prevBytesRx[i] != -1) {
+            if (rxOk) {
                 //Network was reseted
                 if (bytesRx[i] < m_prevBytesRx[i]) {
                     deltaRx += bytesRx[i];
@@ -41,7 +42,7 @@ void DataSourceWlan::processSystemSnapshot()
 
     if (m_prevBytesTx.size() == bytesTx.size()) {
         for (int i=0;i<bytesTx.size();i++) {
-            if (bytesTx[i] != -1 && m_prevBytesTx[i] != -1) {
+            if (txOk) {
                 //Network was reseted
                 if (bytesTx[i] < m_prevBytesTx[i]) {
                     deltaTx += bytesTx[i];
@@ -51,9 +52,20 @@ void DataSourceWlan::processSystemSnapshot()
             }
         }
     }
+
+    // calculating rates
+    double rateRx = 0;
+    double rateTx = 0;
+
+    if ( deltaRx > 0 ) rateRx = deltaRx / m_prevTime.secsTo(getSnapshotTime());
+    if ( deltaTx > 0 ) rateTx = deltaTx / m_prevTime.secsTo(getSnapshotTime());
+
+    // storing old data
     m_prevBytesRx = bytesRx;
     m_prevBytesTx = bytesTx;
+    m_prevTime = getSnapshotTime();
 
-    emit systemDataGathered(DataSource::NetworkWlanRx, deltaRx);
-    emit systemDataGathered(DataSource::NetworkWlanTx, deltaTx);
+
+    emit systemDataGathered(DataSource::NetworkWlanRx, rateRx);
+    emit systemDataGathered(DataSource::NetworkWlanTx, rateTx);
 }

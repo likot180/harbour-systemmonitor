@@ -22,8 +22,9 @@ private:
     int m_sourceRx;
     int m_sourceTx;
 
-    QVector<int> m_prevBytesRx;
-    QVector<int> m_prevBytesTx;
+    QDateTime m_prevTime;
+    QVector<unsigned long long> m_prevBytesRx;
+    QVector<unsigned long long> m_prevBytesTx;
 };
 
 #endif // DATASOURCEWLAN_H

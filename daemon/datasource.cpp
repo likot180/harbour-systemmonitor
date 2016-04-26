@@ -20,3 +20,8 @@ const QByteArray & DataSource::getSystemData(int source)
 {
     return m_snapshot->getSystemData(source);
 }
+
+const QDateTime & DataSource::getSnapshotTime() const
+{
+    return m_snapshot->getSnapshotTime();
+}

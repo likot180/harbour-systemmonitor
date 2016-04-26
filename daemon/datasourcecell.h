@@ -19,11 +19,12 @@ public slots:
     void processSystemSnapshot();
 
 private:
-    QVector<int> m_sourcesRx;
-    QVector<int> m_sourcesTx;
+    QVector<unsigned long long> m_sourcesRx;
+    QVector<unsigned long long> m_sourcesTx;
 
-    QVector<int> m_prevBytesRx;
-    QVector<int> m_prevBytesTx;
+    QDateTime m_prevTime;
+    QVector<unsigned long long> m_prevBytesRx;
+    QVector<unsigned long long> m_prevBytesTx;
 };
 
 #endif // DATASOURCECELL_H

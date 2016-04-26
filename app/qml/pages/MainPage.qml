@@ -144,10 +144,11 @@ Page {
                 graphHeight: 200
                 dataType: [DataSource.NetworkWlanRx, DataSource.NetworkWlanTx]
                 scale: true
-                axisY.units: "Kb"
-                valueTotal: true
+                axisY.units: "kB/s"
+                //valueTotal: false
+                dataAvg: true
                 valueConverter: function(value) {
-                    return (value/1000).toFixed(0);
+                    return (value/1000).toFixed(2);
                 }
 
                 onClicked: pageStack.push(Qt.resolvedUrl("WlanPage.qml"), {deepView: settings.deepView})
@@ -159,8 +160,9 @@ Page {
                 graphHeight: 200
                 dataType: [DataSource.NetworkCellRx, DataSource.NetworkCellTx]
                 scale: true
-                axisY.units: "Kb"
-                valueTotal: true
+                axisY.units: "kB/s"
+                //valueTotal: false
+                dataAvg: true
                 valueConverter: function(value) {
                     return (value/1000).toFixed(2);
                 }

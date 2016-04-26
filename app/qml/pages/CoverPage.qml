@@ -111,7 +111,7 @@ CoverBackground {
             dataDepth: 1
             scale: true
             axisX.grid: 1
-            axisY.units: "Kb"
+            axisY.units: "kB/s"
             valueConverter: function(value) {
                 return (value/1000).toFixed(0);
             }

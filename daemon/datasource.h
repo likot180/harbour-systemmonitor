@@ -45,6 +45,8 @@ protected:
     int registerApplicationSource(const QString &source);
 
     const QByteArray & getSystemData(int source);
+    const QDateTime& getSnapshotTime() const;
+
     //const QByteArray & getSystemData(const QString &source);
 
 private:

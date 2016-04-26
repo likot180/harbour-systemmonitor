@@ -30,17 +30,17 @@ DataSourceCell::DataSourceCell(SystemSnapshot *parent) :
 void DataSourceCell::processSystemSnapshot()
 {
     //qDebug() << "Network CELL data";
-    int deltaRx = 0;
-    int deltaTx = 0;
+    long long deltaRx = 0;
+    long long deltaTx = 0;
 
-    QVector<int> bytesRx;
-    QVector<int> bytesTx;
+    QVector<unsigned long long> bytesRx;
+    QVector<unsigned long long> bytesTx;
     foreach(int sourceRx, m_sourcesRx) {
-        bytesRx.append(QString(getSystemData(sourceRx)).toInt());
+        bytesRx.append(QString(getSystemData(sourceRx)).toULongLong());
     }
 
     foreach(int sourceTx, m_sourcesTx) {
-        bytesTx.append(QString(getSystemData(sourceTx)).toInt());
+        bytesTx.append(QString(getSystemData(sourceTx)).toULongLong());
     }
 
     if (m_prevBytesRx.size() == bytesRx.size()) {
@@ -63,9 +63,19 @@ void DataSourceCell::processSystemSnapshot()
             }
         }
     }
+
+    // calculating rates
+    double rateRx = 0;
+    double rateTx = 0;
+
+    if ( deltaRx > 0 ) rateRx = deltaRx / m_prevTime.secsTo(getSnapshotTime());
+    if ( deltaTx > 0 ) rateTx = deltaTx / m_prevTime.secsTo(getSnapshotTime());
+
+    // storing old data
     m_prevBytesRx = bytesRx;
     m_prevBytesTx = bytesTx;
+    m_prevTime = getSnapshotTime();
 
-    emit systemDataGathered(DataSource::NetworkCellRx, deltaRx);
-    emit systemDataGathered(DataSource::NetworkCellTx, deltaTx);
+    emit systemDataGathered(DataSource::NetworkCellRx, rateRx);
+    emit systemDataGathered(DataSource::NetworkCellTx, rateTx);
 }

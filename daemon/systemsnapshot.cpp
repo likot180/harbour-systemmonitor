@@ -37,6 +37,12 @@ const QByteArray& SystemSnapshot::getSystemData(int source)
     return *m_systemSnapshot.value(source, m_emptySource).data();
 }
 
+const QDateTime& SystemSnapshot::getSnapshotTime() const
+{
+    return m_snapshotTime;
+}
+
+
 void SystemSnapshot::makeSnapshot()
 {
     m_snapshotTime = QDateTime::currentDateTimeUtc();
