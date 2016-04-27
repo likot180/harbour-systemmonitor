@@ -15,7 +15,7 @@ CoverBackground {
 
     function nextGraph() {
         needUpdate = true;
-        settings.coverGraphNum = (settings.coverGraphNum+1)%4
+        settings.coverGraphNum = (settings.coverGraphNum+1)%5
     }
 
     function updateGraph() {
@@ -57,6 +57,8 @@ CoverBackground {
                     return ramGraph;
                 case 3:
                     return batteryGraph;
+                case 4:
+                    return cpuSleepGraph;
 
                 }
             }
@@ -145,6 +147,26 @@ CoverBackground {
             graphTitle: qsTr("BAT")
             graphHeight: coverGraphHeight
             dataType: [DataSource.BatteryPercentage]
+            dataDepth: 1
+            dataAvg: true
+            axisX.grid: 1
+            minY: 0
+            maxY: 100
+            valueConverter: function(value) {
+                return value.toFixed(2);
+            }
+
+            clickEnabled: false
+        }
+    }
+
+    Component {
+        id: cpuSleepGraph
+
+        SysMonGraph {
+            graphTitle: qsTr("SLP")
+            graphHeight: coverGraphHeight
+            dataType: [DataSource.CpuSleep]
             dataDepth: 1
             dataAvg: true
             axisX.grid: 1
