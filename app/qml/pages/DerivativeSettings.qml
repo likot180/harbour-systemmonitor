@@ -29,6 +29,7 @@ Dialog {
                 label: qsTr("Minimal time interval in seconds")
                 text: minDt
                 validator: DoubleValidator {}
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
 
             TextField {
@@ -37,6 +38,7 @@ Dialog {
                 label: qsTr("Minimal change in value")
                 text: minChange
                 validator: DoubleValidator {}
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
 
             TextSwitch {
@@ -52,6 +54,7 @@ Dialog {
                 label: qsTr("Maximal Y on graph")
                 text: maxY
                 validator: DoubleValidator {}
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
         }
     }
