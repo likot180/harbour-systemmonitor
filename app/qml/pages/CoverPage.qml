@@ -153,7 +153,7 @@ CoverBackground {
             minY: 0
             maxY: 100
             valueConverter: function(value) {
-                return value.toFixed(2);
+                return value.toFixed(0);
             }
 
             clickEnabled: false
@@ -173,7 +173,7 @@ CoverBackground {
             minY: 0
             maxY: 100
             valueConverter: function(value) {
-                return value.toFixed(2);
+                return value.toFixed(0);
             }
 
             clickEnabled: false

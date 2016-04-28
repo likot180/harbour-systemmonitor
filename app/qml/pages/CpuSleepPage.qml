@@ -45,7 +45,7 @@ Page {
             width: page.width
             spacing: Theme.paddingLarge
             PageHeader {
-                title: qsTr("CPU sleep statistics")
+                title: qsTr("CPU sleep")
             }
 
             ComboBox {
@@ -76,7 +76,7 @@ Page {
                 minY: 0
                 maxY: 100
                 valueConverter: function(value) {
-                    return value.toFixed(2);
+                    return value.toFixed(0);
                 }
 
                 clickEnabled: false
@@ -90,10 +90,10 @@ Page {
                 dataType: [DataSource.SuspendSuccess]
                 dataAvg: true
                 dataDepth: deepView
-                axisY.units: "1 / h"
+                axisY.units: qsTr(" [1/h]")
                 scale: true
                 valueConverter: function(value) {
-                    return (value * 3600).toFixed(2);
+                    return (value * 3600).toFixed(0);
                 }
 
                 clickEnabled: false
@@ -107,10 +107,10 @@ Page {
                 dataType: [DataSource.SuspendFail]
                 dataAvg: true
                 dataDepth: deepView
-                axisY.units: "1 / h"
+                axisY.units: qsTr(" [1/h]")
                 scale: true
                 valueConverter: function(value) {
-                    return (value * 3600).toFixed(2);
+                    return (value * 3600).toFixed(0);
                 }
 
                 clickEnabled: false

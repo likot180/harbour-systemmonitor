@@ -49,7 +49,7 @@ Page {
             width: page.width
             spacing: Theme.paddingLarge
             PageHeader {
-                title: qsTr("Battery statistics")
+                title: qsTr("Battery")
             }
 
             ComboBox {
@@ -76,10 +76,11 @@ Page {
                 dataType: [DataSource.BatteryPercentage]
                 dataAvg: true
                 dataDepth: deepView
+                axisY.units: "%"
                 minY: 0
                 maxY: 100
                 valueConverter: function(value) {
-                    return value.toFixed(2);
+                    return value.toFixed(0);
                 }
 
                 clickEnabled: false
@@ -92,10 +93,11 @@ Page {
                 dataType: [DataSource.CpuSleep]
                 dataAvg: true
                 dataDepth: deepView
+                axisY.units: "%"
                 minY: 0
                 maxY: 100
                 valueConverter: function(value) {
-                    return value.toFixed(2);
+                    return value.toFixed(0);
                 }
 
                 clickEnabled: false
@@ -113,7 +115,7 @@ Page {
                 dataDerivativeMinDt: 900.0
                 dataDerivativeMinChange: 1.0
                 dataDepth: deepView
-                axisY.units: "% / h"
+                axisY.units: qsTr(" [%/h]")
                 scale: false
                 maxY: 10
                 valueConverter: function(value) {
@@ -163,7 +165,7 @@ Page {
                 dataDerivativeMinDt: 900.0
                 dataDerivativeMinChange: 1.0
                 dataDepth: deepView
-                axisY.units: "% / h"
+                axisY.units: qsTr(" [%/h]")
                 scale: true
                 valueConverter: function(value) {
                     return value.toFixed(2);

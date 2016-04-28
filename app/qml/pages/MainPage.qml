@@ -103,7 +103,7 @@ Page {
                 minY: 0
                 maxY: 100
                 valueConverter: function(value) {
-                    return value.toFixed(2);
+                    return value.toFixed(0);
                 }
 
                 onClicked: pageStack.push(Qt.resolvedUrl("BatteryPage.qml"), {deepView: settings.deepView})
@@ -164,7 +164,7 @@ Page {
                 //valueTotal: false
                 dataAvg: true
                 valueConverter: function(value) {
-                    return (value/1000).toFixed(2);
+                    return (value/1000).toFixed(0);
                 }
 
                 onClicked: pageStack.push(Qt.resolvedUrl("WlanPage.qml"), {deepView: settings.deepView})
@@ -180,7 +180,7 @@ Page {
                 //valueTotal: false
                 dataAvg: true
                 valueConverter: function(value) {
-                    return (value/1000).toFixed(2);
+                    return (value/1000).toFixed(0);
                 }
 
                 onClicked: pageStack.push(Qt.resolvedUrl("CellPage.qml"), {deepView: settings.deepView})

@@ -259,9 +259,9 @@ Item {
                         if (!root.valueTotal) {
                             lastValue = points[end-1].y;
                         }
-                        if (lastValue) {
+                        //if (lastValue) {
                             labelLastValue.text = root.createYLabel(lastValue)+root.axisY.units;
-                        }
+                        //}
                     }
                 }
             }
