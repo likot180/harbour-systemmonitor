@@ -71,6 +71,8 @@ void DataSourceCell::processSystemSnapshot()
     if ( deltaRx > 0 ) rateRx = deltaRx / (double)m_prevTime.secsTo(getSnapshotTime());
     if ( deltaTx > 0 ) rateTx = deltaTx / (double)m_prevTime.secsTo(getSnapshotTime());
 
+    //qDebug() << "Network CELL rates: " << rateRx << " " << rateTx << " [" << deltaRx << ", " << deltaTx << "]";
+
     // storing old data
     m_prevBytesRx = bytesRx;
     m_prevBytesTx = bytesTx;
