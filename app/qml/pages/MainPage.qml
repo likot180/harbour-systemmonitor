@@ -27,6 +27,7 @@ Page {
             graphBattery.updateGraph();
             graphCpu.updateGraph();
             graphRam.updateGraph();
+            graphCpuSleep.updateGraph();
             graphWlanTotal.updateGraph();
             graphCellTotal.updateGraph();
             needUpdate = false;
@@ -136,6 +137,21 @@ Page {
                 }
 
                 onClicked: pageStack.push(Qt.resolvedUrl("RamPage.qml"), {deepView: settings.deepView})
+            }
+
+            SysMonGraph {
+                id: graphCpuSleep
+                graphTitle: qsTr("CPU sleep")
+                graphHeight: 200
+                dataType: [DataSource.CpuSleep]
+                dataAvg: true
+                minY: 0
+                maxY: 100
+                valueConverter: function(value) {
+                    return value.toFixed(0);
+                }
+
+                onClicked: pageStack.push(Qt.resolvedUrl("CpuSleepPage.qml"), {deepView: settings.deepView})
             }
 
             SysMonGraph {

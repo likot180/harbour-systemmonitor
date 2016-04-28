@@ -57,8 +57,8 @@ void DataSourceWlan::processSystemSnapshot()
     double rateRx = 0;
     double rateTx = 0;
 
-    if ( deltaRx > 0 ) rateRx = deltaRx / m_prevTime.secsTo(getSnapshotTime());
-    if ( deltaTx > 0 ) rateTx = deltaTx / m_prevTime.secsTo(getSnapshotTime());
+    if ( deltaRx > 0 ) rateRx = deltaRx / (double)m_prevTime.secsTo(getSnapshotTime());
+    if ( deltaTx > 0 ) rateTx = deltaTx / (double)m_prevTime.secsTo(getSnapshotTime());
 
     // storing old data
     m_prevBytesRx = bytesRx;

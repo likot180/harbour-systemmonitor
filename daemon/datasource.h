@@ -31,7 +31,9 @@ public:
         NetworkCellTx,
         NetworkCellRx,
         BatteryPercentage = 400,
-        CpuSleep = 500
+        CpuSleep = 500,
+        SuspendSuccess = 600,
+        SuspendFail
     };
 
     DataSource(SystemSnapshot *parent = 0);

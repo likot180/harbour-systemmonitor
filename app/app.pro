@@ -41,5 +41,6 @@ OTHER_FILES += \
     harbour-systemmonitor.png
 
 DISTFILES += \
-    qml/pages/DerivativeSettings.qml
+    qml/pages/DerivativeSettings.qml \
+    qml/pages/CpuSleepPage.qml
 
