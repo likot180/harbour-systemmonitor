@@ -8,6 +8,14 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun May 1 2016 rinigus <rinigus.git@gmail.com> 0.6-22
+- Forked after the merge of pull request #13 from abranson/master
+- Network traffic is reported in kB/s, as opposed to quantities used in official version
+- Battery discharging and charging rates are calculated from the battery percentage history
+- Reporting fraction of a time that CPU stayed in deep sleep, new cover and new detailed plot
+- Reporting successful and failed suspend attempts
+- Support for cell data statistics reported via /sys/class/net/rmnet_usb*, as in Nexus 4 port
+
 * Wed Oct 15 2014 Basil Semuonov <basil.semuonov@gmail.com> 0.6-20
 - Fix interval selection on data pages
 
