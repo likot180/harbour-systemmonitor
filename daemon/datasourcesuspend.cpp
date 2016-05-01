@@ -16,7 +16,7 @@ DataSourceSuspend::DataSourceSuspend(SystemSnapshot *parent):
 
 void DataSourceSuspend::processSystemSnapshot()
 {
-    qDebug() << "Suspend DATA";
+    //qDebug() << "Suspend DATA";
 
     QTextStream stat(getSystemData(m_suspendStat));
 
@@ -44,7 +44,7 @@ void DataSourceSuspend::processSystemSnapshot()
 
             double rate = (c-p) / (double)m_prevTime.secsTo(getSnapshotTime());
 
-            qDebug() << "Suspend: " << iter.key() << " " << p << "->" << c << " : " << rate;
+            //qDebug() << "Suspend: " << iter.key() << " " << p << "->" << c << " : " << rate;
 
             if (m_streams.contains(iter.key()) ) // must be always true
                 emit systemDataGathered( m_streams[iter.key()], rate);

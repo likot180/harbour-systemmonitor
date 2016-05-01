@@ -17,7 +17,7 @@ Page {
 
     function updateGraph() {
         graphBattery.updateGraph();
-        graphCpuSleep.updateGraph();
+//        graphCpuSleep.updateGraph();
         graphBatteryDischarge.updateGraph();
         graphBatteryCharge.updateGraph();
     }
@@ -86,22 +86,22 @@ Page {
                 clickEnabled: false
             }
 
-            SysMonGraph {
-                id: graphCpuSleep
-                graphTitle: qsTr("CPU sleep")
-                graphHeight: 200
-                dataType: [DataSource.CpuSleep]
-                dataAvg: true
-                dataDepth: deepView
-                axisY.units: "%"
-                minY: 0
-                maxY: 100
-                valueConverter: function(value) {
-                    return value.toFixed(0);
-                }
+//            SysMonGraph {
+//                id: graphCpuSleep
+//                graphTitle: qsTr("CPU sleep")
+//                graphHeight: 200
+//                dataType: [DataSource.CpuSleep]
+//                dataAvg: true
+//                dataDepth: deepView
+//                axisY.units: "%"
+//                minY: 0
+//                maxY: 100
+//                valueConverter: function(value) {
+//                    return value.toFixed(0);
+//                }
 
-                clickEnabled: false
-            }
+//                clickEnabled: false
+//            }
 
             SysMonGraph {
                 id: graphBatteryDischarge
