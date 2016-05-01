@@ -60,7 +60,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "<a href='#'>Web-site (OpenRepos)</a>";
+                text: "<a href='#'>Web-site (OpenRepos) of official version</a>";
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally("https://openrepos.net/content/basil/system-monitor")
             }
@@ -68,7 +68,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "<a href='#'>Support forum (Talk Maemo Org)</a>";
+                text: "<a href='#'>Support forum (Talk Maemo Org) of official version</a>";
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally("http://talk.maemo.org/showthread.php?t=93824")
             }
@@ -76,9 +76,17 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "<a href='#'>Source code (GitHub)</a>";
+                text: "<a href='#'>Source code (GitHub) of official version</a>";
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally("https://github.com/custodian/harbour-systemmonitor")
+            }
+            Text {
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: Theme.primaryColor
+                font.pixelSize: Theme.fontSizeMedium
+                text: "<a href='#'>Source code (GitHub) of this version</a>";
+                linkColor: Theme.highlightColor
+                onLinkActivated: Qt.openUrlExternally("https://github.com/rinigus/harbour-systemmonitor")
             }
             Text {
                 anchors.horizontalCenter: parent.horizontalCenter
