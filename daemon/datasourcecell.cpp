@@ -8,20 +8,32 @@
 DataSourceCell::DataSourceCell(SystemSnapshot *parent) :
     DataSource(parent)
 {
-    QDir rmnet("/sys/class/net");
-    QStringList filters;
-    filters << "rmnet_usb*" << "rmnet?";
-    rmnet.setNameFilters(filters);
-
-    const QStringList files = rmnet.entryList();
-    QStringListIterator iterator(files);
-    QString fileName;
-    while ( iterator.hasNext() ) {
-        fileName = rmnet.absoluteFilePath(iterator.next());
-//        qDebug() << "Cell statistics:" << fileName;
-        m_sourcesRx.append(registerSystemSource(fileName + "/statistics/rx_bytes"));
-        m_sourcesTx.append(registerSystemSource(fileName + "/statistics/tx_bytes"));
+    for (int i=0;i<=7;i++) {
+        m_sourcesRx.append(registerSystemSource(QString("/sys/class/net/rmnet%1/statistics/rx_bytes").arg(i)));
+        m_sourcesRx.append(registerSystemSource(QString("/sys/class/net/rmnet_usb%1/statistics/rx_bytes").arg(i)));
+        m_sourcesTx.append(registerSystemSource(QString("/sys/class/net/rmnet%1/statistics/tx_bytes").arg(i)));
+        m_sourcesTx.append(registerSystemSource(QString("/sys/class/net/rmnet_usb%1/statistics/tx_bytes").arg(i)));
     }
+
+
+    // Solution below does not work on boot: rmnet_usb* dirs are not available on boot and come out
+    // after sysmon daemon start in Nexus 4
+
+//    QDir rmnet("/sys/class/net");
+//    QStringList filters;
+//    filters << "rmnet_usb*" << "rmnet?";
+//    rmnet.setNameFilters(filters);
+
+//    const QStringList files = rmnet.entryList();
+//    QStringListIterator iterator(files);
+//    QString fileName;
+//    while ( iterator.hasNext() ) {
+//        fileName = rmnet.absoluteFilePath(iterator.next());
+//        m_sourcesRx.append(registerSystemSource(fileName + "/statistics/rx_bytes"));
+//        m_sourcesTx.append(registerSystemSource(fileName + "/statistics/tx_bytes"));
+
+//        qDebug() << "Network cell data init: recording from " << fileName;
+//    }
 
     connect(parent, SIGNAL(processSystemSnapshot()), SLOT(processSystemSnapshot()));
 }
