@@ -72,7 +72,7 @@ Page {
             SysMonGraph {
                 id: graphBattery
                 graphTitle: qsTr("Battery charge")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.BatteryPercentage]
                 dataAvg: true
                 dataDepth: deepView
@@ -89,7 +89,7 @@ Page {
 //            SysMonGraph {
 //                id: graphCpuSleep
 //                graphTitle: qsTr("CPU sleep")
-//                graphHeight: 200
+//                graphHeight: Screen.width >= 1080 ? 350 : 200
 //                dataType: [DataSource.CpuSleep]
 //                dataAvg: true
 //                dataDepth: deepView
@@ -107,7 +107,7 @@ Page {
                 id: graphBatteryDischarge
 
                 graphTitle: qsTr("Battery discharging rate")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.BatteryPercentage]
                 dataAvg: true
                 dataDerivative: true
@@ -157,7 +157,7 @@ Page {
             SysMonGraph {
                 id: graphBatteryCharge
                 graphTitle: qsTr("Battery charging rate")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.BatteryPercentage]
                 dataAvg: true
                 dataDerivative: true

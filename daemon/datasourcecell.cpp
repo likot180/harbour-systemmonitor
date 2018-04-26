@@ -13,6 +13,8 @@ DataSourceCell::DataSourceCell(SystemSnapshot *parent) :
         m_sourcesRx.append(registerSystemSource(QString("/sys/class/net/rmnet_usb%1/statistics/rx_bytes").arg(i)));
         m_sourcesTx.append(registerSystemSource(QString("/sys/class/net/rmnet%1/statistics/tx_bytes").arg(i)));
         m_sourcesTx.append(registerSystemSource(QString("/sys/class/net/rmnet_usb%1/statistics/tx_bytes").arg(i)));
+        m_sourcesRx.append(registerSystemSource(QString("/sys/devices/virtual/net/rmnet_data%1/statistics/rx_bytes").arg(i)));
+        m_sourcesTx.append(registerSystemSource(QString("/sys/devices/virtual/net/rmnet_data%1/statistics/tx_bytes").arg(i)));
     }
 
 

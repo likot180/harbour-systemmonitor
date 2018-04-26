@@ -68,7 +68,7 @@ Page {
             SysMonGraph {
                 id: graphCpuSleep
                 graphTitle: qsTr("CPU sleep")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.CpuSleep]
                 dataAvg: true
                 dataDepth: deepView
@@ -86,7 +86,7 @@ Page {
             SysMonGraph {
                 id: graphSuspendSuccess
                 graphTitle: qsTr("Suspend: success")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.SuspendSuccess]
                 dataAvg: true
                 dataDepth: deepView
@@ -103,7 +103,7 @@ Page {
             SysMonGraph {
                 id: graphSuspendFail
                 graphTitle: qsTr("Suspend: failed")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.SuspendFail]
                 dataAvg: true
                 dataDepth: deepView

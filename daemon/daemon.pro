@@ -25,7 +25,8 @@ SOURCES += \
     datasourcememory.cpp \
     systemsnapshot.cpp \
     datasourcecpusleep.cpp \
-    datasourcesuspend.cpp
+    datasourcesuspend.cpp \
+    datasourcetemp.cpp
 
 HEADERS += \
     settings.h \
@@ -41,7 +42,8 @@ HEADERS += \
     datasourcememory.h \
     systemsnapshot.h \
     datasourcecpusleep.h \
-    datasourcesuspend.h
+    datasourcesuspend.h \
+    datasourcetemp.h
 
 #OTHER_FILES += \
 #    net.thecust.systemmonitord.xml

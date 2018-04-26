@@ -69,7 +69,7 @@ Page {
             SysMonGraph {
                 id: cpuTotal
                 graphTitle: qsTr("Total")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.CpuTotal]
                 dataAvg: true
                 dataDepth: deepView
@@ -85,7 +85,7 @@ Page {
             SysMonGraph {
                 id: cpuUser
                 graphTitle: qsTr("User processes")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.CpuUser]
                 dataAvg: true
                 dataDepth: deepView
@@ -101,7 +101,7 @@ Page {
             SysMonGraph {
                 id: cpuSystem
                 graphTitle: qsTr("System processes")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.CpuSystem]
                 dataAvg: true
                 dataDepth: deepView
@@ -117,7 +117,7 @@ Page {
             SysMonGraph {
                 id: cpuIO
                 graphTitle: qsTr("IO wait")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.CpuIO]
                 dataAvg: true
                 dataDepth: deepView

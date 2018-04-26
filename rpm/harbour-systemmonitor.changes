@@ -8,6 +8,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun May 1 2016 Arno Dekker <a-dekker.git@gmail.com> 0.6-23
+- Fixed swap measurement for Xperia X
+- Changed Mb to MiB, Kb to KiB and kB/s to KiB/s
+- Fix for cellular traffic Xperia X (by niemisenjussi)
+- Rescaled Y-axis for >= 1080p devices
+- Added temperature graph
+
 * Sun May 1 2016 rinigus <rinigus.git@gmail.com> 0.6-22
 - Forked after the merge of pull request #13 from abranson/master
 - Network traffic is reported in kB/s, as opposed to quantities used in official version

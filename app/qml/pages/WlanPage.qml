@@ -67,15 +67,15 @@ Page {
             SysMonGraph {
                 id: wlanRx
                 graphTitle: qsTr("Received data")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.NetworkWlanRx]
                 dataDepth: deepView
                 scale: true
-                axisY.units: "kB/s"
+                axisY.units: " KiB/s"
                 //valueTotal: false
                 dataAvg: true
                 valueConverter: function(value) {
-                    return (value/1000.).toFixed(2);
+                    return (value/1024.).toFixed(2);
                 }
 
                 clickEnabled: false
@@ -84,15 +84,15 @@ Page {
             SysMonGraph {
                 id: wlanTx
                 graphTitle: qsTr("Transmitted data")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.NetworkWlanTx]
                 dataDepth: deepView
                 scale: true
-                axisY.units: "kB/s"
+                axisY.units: " KiB/s"
                 //valueTotal: false
                 dataAvg: true
                 valueConverter: function(value) {
-                    return (value/1000.).toFixed(2);
+                    return (value/1024.).toFixed(2);
                 }
 
                 clickEnabled: false

@@ -71,10 +71,10 @@ void DataSourceMemory::processSystemSnapshot()
         case 4:
             swapCached = value;
             break;
-        case 17:
+        case 13:
             swapTotal = value;
             break;
-        case 18:
+        case 14:
             swapFree = value;
             break;
         }

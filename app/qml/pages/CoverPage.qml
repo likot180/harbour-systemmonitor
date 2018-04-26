@@ -15,7 +15,7 @@ CoverBackground {
 
     function nextGraph() {
         needUpdate = true;
-        settings.coverGraphNum = (settings.coverGraphNum+1)%5
+        settings.coverGraphNum = (settings.coverGraphNum+1)%6
     }
 
     function updateGraph() {
@@ -59,6 +59,8 @@ CoverBackground {
                     return batteryGraph;
                 case 4:
                     return cpuSleepGraph;
+                case 5:
+                    return temperatureGraph;
 
                 }
             }
@@ -113,9 +115,9 @@ CoverBackground {
             dataDepth: 1
             scale: true
             axisX.grid: 1
-            axisY.units: "kB/s"
+            axisY.units: " KiB/s"
             valueConverter: function(value) {
-                return (value/1000).toFixed(0);
+                return (value/1024).toFixed(0);
             }
             clickEnabled: false
         }
@@ -132,9 +134,9 @@ CoverBackground {
             dataAvg: true
             scale: true
             axisX.grid: 1
-            axisY.units: "Mb"
+            axisY.units: " MiB"
             valueConverter: function(value) {
-                return (value/1000).toFixed(0);
+                return (value/1024).toFixed(0);
             }
             clickEnabled: false
         }
@@ -179,6 +181,24 @@ CoverBackground {
             clickEnabled: false
         }
     }
+
+    Component {
+        id: temperatureGraph
+
+        SysMonGraph {
+            graphTitle: qsTr("TEMP")
+            graphHeight: coverGraphHeight
+            dataType: [DataSource.TemperatureDeg]
+            dataDepth: 1
+            dataAvg: true
+            axisX.grid: 1
+            minY: 0
+            maxY: 100
+            valueConverter: function(value) {
+                return value.toFixed(0);
+            }
+
+            clickEnabled: false
+        }
+    }
 }
-
-

@@ -124,7 +124,7 @@ Page {
                     color: Theme.highlightColor
                 }
                 Label {
-                    text: qsTr("%1 Kb").arg(databaseSize/1000);
+                    text: qsTr("%1 KiB").arg(databaseSize/1024);
                     color: Theme.primaryColor
                 }
             }

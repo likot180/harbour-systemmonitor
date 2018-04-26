@@ -33,7 +33,8 @@ public:
         BatteryPercentage = 400,
         CpuSleep = 500,
         SuspendSuccess = 600,
-        SuspendFail
+        SuspendFail,
+        TemperatureDeg
     };
 
     DataSource(SystemSnapshot *parent = 0);

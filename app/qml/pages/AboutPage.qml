@@ -28,7 +28,7 @@ Page {
                 text: "System Monitor"
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeLarge
-            }            
+            }
             Image {
                 anchors.horizontalCenter: parent.horizontalCenter
                 source: "/usr/share/icons/hicolor/86x86/apps/harbour-systemmonitor.png"
@@ -86,7 +86,7 @@ Page {
                 font.pixelSize: Theme.fontSizeMedium
                 text: "<a href='#'>Source code (GitHub) of this version</a>";
                 linkColor: Theme.highlightColor
-                onLinkActivated: Qt.openUrlExternally("https://github.com/rinigus/harbour-systemmonitor")
+                onLinkActivated: Qt.openUrlExternally("https://github.com/a-dekker/harbour-systemmonitor")
             }
             Text {
                 anchors.horizontalCenter: parent.horizontalCenter

@@ -67,14 +67,14 @@ Page {
             SysMonGraph {
                 id: ramUsed
                 graphTitle: qsTr("RAM")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.RAMUsed]
                 dataAvg: true
                 dataDepth: deepView
                 scale: true
-                axisY.units: "Mb"
+                axisY.units: " MiB"
                 valueConverter: function(value) {
-                    return (value/1000).toFixed(0);
+                    return (value/1024).toFixed(0);
                 }
 
                 clickEnabled: false
@@ -83,14 +83,14 @@ Page {
             SysMonGraph {
                 id: swapUsed
                 graphTitle: qsTr("Swap")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.SwapUsed]
                 dataAvg: true
                 dataDepth: deepView
                 scale: true
-                axisY.units: "Mb"
+                axisY.units: " MiB"
                 valueConverter: function(value) {
-                    return (value/1000).toFixed(0);
+                    return (value/1024).toFixed(0);
                 }
 
                 clickEnabled: false

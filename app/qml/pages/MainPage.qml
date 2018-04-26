@@ -30,6 +30,7 @@ Page {
             graphCpuSleep.updateGraph();
             graphWlanTotal.updateGraph();
             graphCellTotal.updateGraph();
+            graphTemperature.updateGraph();
             needUpdate = false;
         }
     }
@@ -97,7 +98,7 @@ Page {
             SysMonGraph {
                 id: graphBattery
                 graphTitle: qsTr("Battery charge")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.BatteryPercentage]
                 dataAvg: true
                 minY: 0
@@ -112,7 +113,7 @@ Page {
             SysMonGraph {
                 id: graphCpu
                 graphTitle: qsTr("CPU usage")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.CpuTotal]
                 dataAvg: true
                 minY: 0
@@ -127,13 +128,13 @@ Page {
             SysMonGraph {
                 id: graphRam
                 graphTitle: qsTr("RAM usage")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.RAMUsed]
                 dataAvg: true
                 scale: true
-                axisY.units: "Mb"
+                axisY.units: " MiB"
                 valueConverter: function(value) {
-                    return (value/1000).toFixed(0)
+                    return (value/1024).toFixed(0)
                 }
 
                 onClicked: pageStack.push(Qt.resolvedUrl("RamPage.qml"), {deepView: settings.deepView})
@@ -142,7 +143,7 @@ Page {
             SysMonGraph {
                 id: graphCpuSleep
                 graphTitle: qsTr("CPU sleep")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.CpuSleep]
                 dataAvg: true
                 minY: 0
@@ -157,14 +158,14 @@ Page {
             SysMonGraph {
                 id: graphWlanTotal
                 graphTitle: qsTr("Wlan traffic")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.NetworkWlanRx, DataSource.NetworkWlanTx]
                 scale: true
-                axisY.units: "kB/s"
+                axisY.units: " KiB/s"
                 //valueTotal: false
                 dataAvg: true
                 valueConverter: function(value) {
-                    return (value/1000).toFixed(0);
+                    return (value/1024).toFixed(0);
                 }
 
                 onClicked: pageStack.push(Qt.resolvedUrl("WlanPage.qml"), {deepView: settings.deepView})
@@ -173,17 +174,31 @@ Page {
             SysMonGraph {
                 id: graphCellTotal
                 graphTitle: qsTr("Cell traffic")
-                graphHeight: 200
+                graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.NetworkCellRx, DataSource.NetworkCellTx]
                 scale: true
-                axisY.units: "kB/s"
+                axisY.units: " KiB/s"
                 //valueTotal: false
                 dataAvg: true
                 valueConverter: function(value) {
-                    return (value/1000).toFixed(0);
+                    return (value/1024).toFixed(0);
                 }
 
                 onClicked: pageStack.push(Qt.resolvedUrl("CellPage.qml"), {deepView: settings.deepView})
+            }
+
+            SysMonGraph {
+                id: graphTemperature
+                graphTitle: qsTr("CPU temperature")
+                graphHeight: Screen.width >= 1080 ? 350 : 200
+                dataType: [DataSource.TemperatureDeg]
+                scale: true
+                axisY.units: " °C"
+                dataAvg: true
+                valueConverter: function(value) {
+                    return (value).toFixed(0);
+                }
+
             }
         }
     }
