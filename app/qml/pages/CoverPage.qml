@@ -134,7 +134,7 @@ CoverBackground {
             dataAvg: true
             scale: true
             axisX.grid: 1
-            axisY.units: " MiB"
+            axisY.units: "MiB"
             valueConverter: function(value) {
                 return (value/1024).toFixed(0);
             }
@@ -194,6 +194,7 @@ CoverBackground {
             axisX.grid: 1
             minY: 0
             maxY: 100
+            axisY.units: "°C"
             valueConverter: function(value) {
                 return value.toFixed(0);
             }
