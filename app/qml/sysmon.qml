@@ -95,7 +95,7 @@ ApplicationWindow
         id: depthModel
         ListElement {
             label: "1 hour"
-            interval:  1
+            interval: 1
         }
         ListElement {
             label: "4 hours"

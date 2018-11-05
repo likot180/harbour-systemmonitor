@@ -68,7 +68,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "<a href='#'>Support forum (Talk Maemo Org) of official version</a>";
+                text: "<a href='#'>Support forum (TMO) of official version</a>";
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally("http://talk.maemo.org/showthread.php?t=93824")
             }

@@ -54,30 +54,16 @@ void DataSourceMemory::processSystemSnapshot()
             qDebug() << "Failed to fetch memory info";
             return;
         }
+        QString memKey = values.at(0);
         int value = values.at(1).toInt();
-        switch(i){
-        case 0:
-            memTotal = value;
-            break;
-        case 1:
-            memFree = value;
-            break;
-        case 2:
-            buffers = value;
-            break;
-        case 3:
-            cached = value;
-            break;
-        case 4:
-            swapCached = value;
-            break;
-        case 13:
-            swapTotal = value;
-            break;
-        case 14:
-            swapFree = value;
-            break;
-        }
+
+        if (memKey == "MemTotal:") memTotal = value;
+        if (memKey == "MemFree:") memFree = value;
+        if (memKey == "Cached:") cached = value;
+        if (memKey == "Buffers:") buffers = value;
+        if (memKey == "SwapCached:") swapCached = value;
+        if (memKey == "SwapTotal:") swapTotal = value;
+        if (memKey == "SwapFree:") swapFree = value;
     }
 
     emit systemDataGathered(DataSource::RAMUsed, float(memTotal - memFree - buffers - cached));

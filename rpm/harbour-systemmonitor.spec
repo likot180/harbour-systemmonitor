@@ -14,7 +14,7 @@ Name:       harbour-systemmonitor
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    System Monitor
 Version:    0.6
-Release:    23
+Release:    24
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://thecust.net/
@@ -89,8 +89,7 @@ su nemo -c "systemctl --user daemon-reload"
 # << postun
 
 %files
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}
+%defattr(-,root,root,-)
 %{_bindir}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop

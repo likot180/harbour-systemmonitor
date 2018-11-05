@@ -50,7 +50,8 @@ Page {
             ComboBox {
                 id: comboBoxDepthView
                 label: qsTr("Show data for")
-                currentIndex: 2
+                // Why does 12 hour identify as index 0 ?
+                currentIndex: page.deepView === 12 ? 4 : comboBoxDepthView.currentIndex
                 menu: ContextMenu {
                     Repeater {
                         model: depthModel
