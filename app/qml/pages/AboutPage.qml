@@ -8,6 +8,11 @@ Page {
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
         anchors.fill: parent
+        contentWidth: parent.width
+        contentHeight: column.height
+
+        VerticalScrollDecorator {
+        }
 
         Column {
             id: column
@@ -97,5 +102,3 @@ Page {
         }
     }
 }
-
-

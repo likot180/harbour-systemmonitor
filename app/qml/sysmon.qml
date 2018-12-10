@@ -9,6 +9,11 @@ ApplicationWindow
     initialPage: Component { MainPage { } }
     cover: Qt.resolvedUrl("pages/CoverPage.qml")
 
+    allowedOrientations: Orientation.Portrait | Orientation.Landscape
+                         | Orientation.LandscapeInverted
+    _defaultPageOrientations: Orientation.Portrait | Orientation.Landscape
+    | Orientation.LandscapeInverted
+
     //TODO: combine all dconf settings here
     ConfigurationGroup {
         id: settings

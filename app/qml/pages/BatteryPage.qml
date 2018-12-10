@@ -15,6 +15,12 @@ Page {
         }
     }
 
+    onOrientationTransitionRunningChanged: {
+        if (!orientationTransitionRunning) {
+            updateGraph()
+        }
+    }
+
     function updateGraph() {
         graphBattery.updateGraph();
 //        graphCpuSleep.updateGraph();

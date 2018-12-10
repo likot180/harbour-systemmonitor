@@ -15,6 +15,11 @@ Page {
         }
     }
 
+    onOrientationTransitionRunningChanged: {
+        if (!orientationTransitionRunning) {
+            updateGraph()
+        }
+    }
     function updateGraph() {
         ramUsed.updateGraph();
         swapUsed.updateGraph();

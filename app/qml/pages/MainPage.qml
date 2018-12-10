@@ -22,6 +22,13 @@ Page {
         updateGraph()
     }
 
+    onOrientationTransitionRunningChanged: {
+        if (!orientationTransitionRunning) {
+            needUpdate = true;
+            updateGraph()
+        }
+    }
+
     function updateGraph() {
         if (page.active && needUpdate) {
             graphBattery.updateGraph();
