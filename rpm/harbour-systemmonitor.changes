@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mon Nov 5 2018 Arno Dekker <a-dekker.git@gmail.com> 0.6-26
+- Added cellular signal strength
+
 * Mon Nov 5 2018 Arno Dekker <a-dekker.git@gmail.com> 0.6-25
 - Changes for supporting landscape mode
 

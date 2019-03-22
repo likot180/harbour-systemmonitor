@@ -34,7 +34,9 @@ public:
         CpuSleep = 500,
         SuspendSuccess = 600,
         SuspendFail,
-        TemperatureDeg
+        TemperatureDeg,
+        SignalPerc,
+        InternetPerc
     };
 
     DataSource(SystemSnapshot *parent = 0);

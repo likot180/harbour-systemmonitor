@@ -7,6 +7,8 @@
 #include "datasourcecpusleep.h"
 #include "datasourcesuspend.h"
 #include "datasourcetemp.h"
+#include "datasourcesignal.h"
+#include "datasourceinternet.h"
 
 Service::Service(QObject *parent, Settings *settings) :
     SystemSnapshot(parent), m_settings(settings)
@@ -35,6 +37,8 @@ void Service::initDataSources()
     m_sources.append(new DataSourceCpuSleep(this));
     m_sources.append(new DataSourceSuspend(this));
     m_sources.append(new DataSourceTemp(this));
+    m_sources.append(new DataSourceSignal(this));
+    m_sources.append(new DataSourceInternet(this));
 
     foreach(const DataSource* source, m_sources) {
         connect(source, SIGNAL(systemDataGathered(DataSource::Type,float))

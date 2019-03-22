@@ -38,6 +38,8 @@ Page {
             graphWlanTotal.updateGraph();
             graphCellTotal.updateGraph();
             graphTemperature.updateGraph();
+            graphSignal.updateGraph();
+            graphInternet.updateGraph();
             needUpdate = false;
         }
     }
@@ -192,6 +194,34 @@ Page {
                 }
 
                 onClicked: pageStack.push(Qt.resolvedUrl("CellPage.qml"), {deepView: settings.deepView})
+            }
+
+            SysMonGraph {
+                id: graphSignal
+                graphTitle: qsTr("Cell signal")
+                graphHeight: Screen.width >= 1080 ? 350 : 200
+                dataType: [DataSource.SignalPerc]
+                scale: true
+                axisY.units: " %"
+                dataAvg: true
+                valueConverter: function(value) {
+                    return (value).toFixed(0);
+                }
+
+            }
+
+            SysMonGraph {
+                id: graphInternet
+                graphTitle: qsTr("Internet signal")
+                graphHeight: Screen.width >= 1080 ? 350 : 200
+                dataType: [DataSource.InternetPerc]
+                scale: true
+                axisY.units: " %"
+                dataAvg: true
+                valueConverter: function(value) {
+                    return (value).toFixed(0);
+                }
+
             }
 
             SysMonGraph {

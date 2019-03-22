@@ -97,7 +97,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "Basil Semuonov 2014"
+                text: "© Basil Semuonov/Rinigus/Arno Dekker"
             }
         }
     }

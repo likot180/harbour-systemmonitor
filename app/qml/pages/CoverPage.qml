@@ -15,7 +15,7 @@ CoverBackground {
 
     function nextGraph() {
         needUpdate = true;
-        settings.coverGraphNum = (settings.coverGraphNum+1)%6
+        settings.coverGraphNum = (settings.coverGraphNum+1)%8
     }
 
     function updateGraph() {
@@ -61,6 +61,10 @@ CoverBackground {
                     return cpuSleepGraph;
                 case 5:
                     return temperatureGraph;
+                case 6:
+                    return signalGraph;
+                case 7:
+                    return internetGraph;
 
                 }
             }
@@ -195,6 +199,48 @@ CoverBackground {
             minY: 0
             maxY: 100
             axisY.units: "°C"
+            valueConverter: function(value) {
+                return value.toFixed(0);
+            }
+
+            clickEnabled: false
+        }
+    }
+
+    Component {
+        id: signalGraph
+
+        SysMonGraph {
+            graphTitle: qsTr("CELL")
+            graphHeight: coverGraphHeight
+            dataType: [DataSource.SignalPerc]
+            dataDepth: 1
+            dataAvg: true
+            axisX.grid: 1
+            minY: 0
+            maxY: 100
+            axisY.units: "%"
+            valueConverter: function(value) {
+                return value.toFixed(0);
+            }
+
+            clickEnabled: false
+        }
+    }
+
+    Component {
+        id: internetGraph
+
+        SysMonGraph {
+            graphTitle: qsTr("INTERNET")
+            graphHeight: coverGraphHeight
+            dataType: [DataSource.InternetPerc]
+            dataDepth: 1
+            dataAvg: true
+            axisX.grid: 1
+            minY: 0
+            maxY: 100
+            axisY.units: "%"
             valueConverter: function(value) {
                 return value.toFixed(0);
             }
