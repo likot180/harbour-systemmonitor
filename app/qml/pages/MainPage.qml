@@ -201,7 +201,8 @@ Page {
                 graphTitle: qsTr("Cell signal")
                 graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.SignalPerc]
-                scale: true
+                minY: 0
+                maxY: 100
                 axisY.units: " %"
                 dataAvg: true
                 valueConverter: function(value) {
@@ -215,7 +216,8 @@ Page {
                 graphTitle: qsTr("Internet signal")
                 graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.InternetPerc]
-                scale: true
+                minY: 0
+                maxY: 100
                 axisY.units: " %"
                 dataAvg: true
                 valueConverter: function(value) {
