@@ -8,6 +8,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Mar 21 2020 Arno Dekker <a-dekker.git@gmail.com> 0.6-28
+- Removed decimal in CPU Y-axis
+- Fixes for string translations and Russian translation thanks dikonov
+
 * Wed Jul 31 2019 Arno Dekker <a-dekker.git@gmail.com> 0.6-27
 - No longer scale Cell and Internet signal graph
 - Fixed compilation error for more recent compiler

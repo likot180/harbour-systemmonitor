@@ -3,6 +3,8 @@ TARGET = harbour-systemmonitor
 CONFIG += sailfishapp
 PKGCONFIG += mlite5
 
+DEPLOYMENT_PATH = /usr/share/$${TARGET}
+
 QT += dbus sql
 QMAKE_CXXFLAGS += -std=c++0x
 
@@ -35,12 +37,30 @@ OTHER_FILES += \
     qml/pages/Axis.qml \
     qml/pages/GraphData.qml \
     qml/pages/SysMonGraph.qml \
+    translations/*.ts \
     qml/sysmon.qml \
     qml/images/* \
     harbour-systemmonitor.desktop \
     harbour-systemmonitor.png
 
+INSTALLS += translations
+
+TRANSLATIONS = translations/harbour-systemmonitor-ru.ts
+
+# only include these files for translation:
+lupdate_only {
+    SOURCES = qml/*.qml \
+              qml/pages/*.qml
+}
+
+translations.files = translations
+translations.path = $${DEPLOYMENT_PATH}
+
+
 DISTFILES += \
     qml/pages/DerivativeSettings.qml \
     qml/pages/CpuSleepPage.qml
 
+# to disable building translations every time, comment out the
+# following CONFIG line
+CONFIG += sailfishapp_i18n

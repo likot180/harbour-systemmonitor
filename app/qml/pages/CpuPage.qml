@@ -7,10 +7,10 @@ Page {
 
     property int deepView: 12
     onDeepViewChanged: {
-        for (var i=0;i<depthModel.count;i++) {
+        for (var i = 0; i < depthModel.count; i++) {
             if (depthModel.get(i).interval == deepView) {
-                comboBoxDepthView.currentIndex = i;
-                break;
+                comboBoxDepthView.currentIndex = i
+                break
             }
         }
     }
@@ -22,21 +22,21 @@ Page {
     }
 
     function updateGraph() {
-        cpuTotal.updateGraph();
-        cpuUser.updateGraph();
-        cpuSystem.updateGraph();
-        cpuIO.updateGraph();
+        cpuTotal.updateGraph()
+        cpuUser.updateGraph()
+        cpuSystem.updateGraph()
+        cpuIO.updateGraph()
     }
 
     Connections {
         target: sysmon
         onDataUpdated: {
-            updateGraph();
+            updateGraph()
         }
     }
 
     Component.onCompleted: {
-        updateGraph();
+        updateGraph()
     }
 
     SilicaFlickable {
@@ -44,7 +44,9 @@ Page {
         anchors.fill: parent
         contentHeight: column.height
 
-        VerticalScrollDecorator { flickable: flickable }
+        VerticalScrollDecorator {
+            flickable: flickable
+        }
 
         Column {
             id: column
@@ -82,8 +84,8 @@ Page {
                 dataDepth: deepView
                 minY: 0
                 maxY: 100
-                valueConverter: function(value) {
-                    return value.toFixed(1);
+                valueConverter: function (value) {
+                    return value.toFixed(0)
                 }
 
                 clickEnabled: false
@@ -98,8 +100,8 @@ Page {
                 dataDepth: deepView
                 minY: 0
                 maxY: 100
-                valueConverter: function(value) {
-                    return value.toFixed(1);
+                valueConverter: function (value) {
+                    return value.toFixed(0)
                 }
 
                 clickEnabled: false
@@ -114,8 +116,8 @@ Page {
                 dataDepth: deepView
                 minY: 0
                 maxY: 100
-                valueConverter: function(value) {
-                    return value.toFixed(1);
+                valueConverter: function (value) {
+                    return value.toFixed(0)
                 }
 
                 clickEnabled: false
@@ -130,8 +132,8 @@ Page {
                 dataDepth: deepView
                 minY: 0
                 maxY: 100
-                valueConverter: function(value) {
-                    return value.toFixed(1);
+                valueConverter: function (value) {
+                    return value.toFixed(0)
                 }
 
                 clickEnabled: false

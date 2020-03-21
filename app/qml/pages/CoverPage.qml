@@ -232,7 +232,7 @@ CoverBackground {
         id: internetGraph
 
         SysMonGraph {
-            graphTitle: qsTr("WiFi")
+            graphTitle: qsTr("INTERNET")
             graphHeight: coverGraphHeight
             dataType: [DataSource.InternetPerc]
             dataDepth: 1

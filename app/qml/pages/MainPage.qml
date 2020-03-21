@@ -12,40 +12,40 @@ Page {
     property bool needUpdate: true
 
     function deepViewChanged() {
-        for (var i=0;i<depthModel.count;i++) {
+        for (var i = 0; i < depthModel.count; i++) {
             if (depthModel.get(i).interval == settings.deepView) {
-                comboBoxDepthView.currentIndex = i;
-                break;
+                comboBoxDepthView.currentIndex = i
+                break
             }
         }
-        needUpdate = true;
+        needUpdate = true
         updateGraph()
     }
 
     onOrientationTransitionRunningChanged: {
         if (!orientationTransitionRunning) {
-            needUpdate = true;
+            needUpdate = true
             updateGraph()
         }
     }
 
     function updateGraph() {
         if (page.active && needUpdate) {
-            graphBattery.updateGraph();
-            graphCpu.updateGraph();
-            graphRam.updateGraph();
-            graphCpuSleep.updateGraph();
-            graphWlanTotal.updateGraph();
-            graphCellTotal.updateGraph();
-            graphTemperature.updateGraph();
-            graphSignal.updateGraph();
-            graphInternet.updateGraph();
-            needUpdate = false;
+            graphBattery.updateGraph()
+            graphCpu.updateGraph()
+            graphRam.updateGraph()
+            graphCpuSleep.updateGraph()
+            graphWlanTotal.updateGraph()
+            graphCellTotal.updateGraph()
+            graphTemperature.updateGraph()
+            graphSignal.updateGraph()
+            graphInternet.updateGraph()
+            needUpdate = false
         }
     }
 
     Component.onCompleted: {
-        deepViewChanged();
+        deepViewChanged()
     }
 
     Connections {
@@ -56,8 +56,8 @@ Page {
     Connections {
         target: sysmon
         onDataUpdated: {
-            needUpdate = true;
-            updateGraph();
+            needUpdate = true
+            updateGraph()
         }
     }
 
@@ -66,7 +66,9 @@ Page {
         anchors.fill: parent
         contentHeight: column.height
 
-        VerticalScrollDecorator { flickable: flickable }
+        VerticalScrollDecorator {
+            flickable: flickable
+        }
 
         PullDownMenu {
             MenuItem {
@@ -112,11 +114,13 @@ Page {
                 dataAvg: true
                 minY: 0
                 maxY: 100
-                valueConverter: function(value) {
-                    return value.toFixed(0);
+                valueConverter: function (value) {
+                    return value.toFixed(0)
                 }
 
-                onClicked: pageStack.push(Qt.resolvedUrl("BatteryPage.qml"), {deepView: settings.deepView})
+                onClicked: pageStack.push(Qt.resolvedUrl("BatteryPage.qml"), {
+                                              "deepView": settings.deepView
+                                          })
             }
 
             SysMonGraph {
@@ -127,11 +131,13 @@ Page {
                 dataAvg: true
                 minY: 0
                 maxY: 100
-                valueConverter: function(value) {
-                    return value.toFixed(1);
+                valueConverter: function (value) {
+                    return value.toFixed(0)
                 }
 
-                onClicked: pageStack.push(Qt.resolvedUrl("CpuPage.qml"), {deepView: settings.deepView})
+                onClicked: pageStack.push(Qt.resolvedUrl("CpuPage.qml"), {
+                                              "deepView": settings.deepView
+                                          })
             }
 
             SysMonGraph {
@@ -146,7 +152,9 @@ Page {
                     return (value/1024).toFixed(0)
                 }
 
-                onClicked: pageStack.push(Qt.resolvedUrl("RamPage.qml"), {deepView: settings.deepView})
+                onClicked: pageStack.push(Qt.resolvedUrl("RamPage.qml"), {
+                                              "deepView": settings.deepView
+                                          })
             }
 
             SysMonGraph {
@@ -157,11 +165,13 @@ Page {
                 dataAvg: true
                 minY: 0
                 maxY: 100
-                valueConverter: function(value) {
-                    return value.toFixed(0);
+                valueConverter: function (value) {
+                    return value.toFixed(0)
                 }
 
-                onClicked: pageStack.push(Qt.resolvedUrl("CpuSleepPage.qml"), {deepView: settings.deepView})
+                onClicked: pageStack.push(Qt.resolvedUrl("CpuSleepPage.qml"), {
+                                              "deepView": settings.deepView
+                                          })
             }
 
             SysMonGraph {
@@ -173,11 +183,13 @@ Page {
                 axisY.units: qsTr(" KiB/s")
                 //valueTotal: false
                 dataAvg: true
-                valueConverter: function(value) {
-                    return (value/1024).toFixed(0);
+                valueConverter: function (value) {
+                    return (value / 1024).toFixed(0)
                 }
 
-                onClicked: pageStack.push(Qt.resolvedUrl("WlanPage.qml"), {deepView: settings.deepView})
+                onClicked: pageStack.push(Qt.resolvedUrl("WlanPage.qml"), {
+                                              "deepView": settings.deepView
+                                          })
             }
 
             SysMonGraph {
@@ -189,11 +201,13 @@ Page {
                 axisY.units: qsTr(" KiB/s")
                 //valueTotal: false
                 dataAvg: true
-                valueConverter: function(value) {
-                    return (value/1024).toFixed(0);
+                valueConverter: function (value) {
+                    return (value / 1024).toFixed(0)
                 }
 
-                onClicked: pageStack.push(Qt.resolvedUrl("CellPage.qml"), {deepView: settings.deepView})
+                onClicked: pageStack.push(Qt.resolvedUrl("CellPage.qml"), {
+                                              "deepView": settings.deepView
+                                          })
             }
 
             SysMonGraph {
@@ -201,27 +215,27 @@ Page {
                 graphTitle: qsTr("Cell signal")
                 graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.SignalPerc]
-                scale: true
+                minY: 0
+                maxY: 100
                 axisY.units: " %"
                 dataAvg: true
-                valueConverter: function(value) {
-                    return (value).toFixed(0);
+                valueConverter: function (value) {
+                    return (value).toFixed(0)
                 }
-
             }
 
             SysMonGraph {
                 id: graphInternet
-                graphTitle: qsTr("WiFi signal")
+                graphTitle: qsTr("Internet signal")
                 graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.InternetPerc]
-                scale: true
+                minY: 0
+                maxY: 100
                 axisY.units: " %"
                 dataAvg: true
-                valueConverter: function(value) {
-                    return (value).toFixed(0);
+                valueConverter: function (value) {
+                    return (value).toFixed(0)
                 }
-
             }
 
             SysMonGraph {
@@ -232,10 +246,9 @@ Page {
                 scale: true
                 axisY.units: " °C"
                 dataAvg: true
-                valueConverter: function(value) {
-                    return (value).toFixed(0);
+                valueConverter: function (value) {
+                    return (value).toFixed(0)
                 }
-
             }
         }
     }
