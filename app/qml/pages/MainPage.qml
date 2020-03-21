@@ -141,7 +141,7 @@ Page {
                 dataType: [DataSource.RAMUsed]
                 dataAvg: true
                 scale: true
-                axisY.units: " MiB"
+                axisY.units: qsTr(" MiB")
                 valueConverter: function(value) {
                     return (value/1024).toFixed(0)
                 }
@@ -170,7 +170,7 @@ Page {
                 graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.NetworkWlanRx, DataSource.NetworkWlanTx]
                 scale: true
-                axisY.units: " KiB/s"
+                axisY.units: qsTr(" KiB/s")
                 //valueTotal: false
                 dataAvg: true
                 valueConverter: function(value) {
@@ -186,7 +186,7 @@ Page {
                 graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.NetworkCellRx, DataSource.NetworkCellTx]
                 scale: true
-                axisY.units: " KiB/s"
+                axisY.units: qsTr(" KiB/s")
                 //valueTotal: false
                 dataAvg: true
                 valueConverter: function(value) {
@@ -201,8 +201,7 @@ Page {
                 graphTitle: qsTr("Cell signal")
                 graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.SignalPerc]
-                minY: 0
-                maxY: 100
+                scale: true
                 axisY.units: " %"
                 dataAvg: true
                 valueConverter: function(value) {
@@ -213,11 +212,10 @@ Page {
 
             SysMonGraph {
                 id: graphInternet
-                graphTitle: qsTr("Internet signal")
+                graphTitle: qsTr("WiFi signal")
                 graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.InternetPerc]
-                minY: 0
-                maxY: 100
+                scale: true
                 axisY.units: " %"
                 dataAvg: true
                 valueConverter: function(value) {
