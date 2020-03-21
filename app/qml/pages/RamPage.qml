@@ -78,7 +78,7 @@ Page {
                 dataAvg: true
                 dataDepth: deepView
                 scale: true
-                axisY.units: " MiB"
+                axisY.units: qsTr(" MiB")
                 valueConverter: function(value) {
                     return (value/1024).toFixed(0);
                 }
@@ -94,7 +94,7 @@ Page {
                 dataAvg: true
                 dataDepth: deepView
                 scale: true
-                axisY.units: " MiB"
+                axisY.units: qsTr(" MiB")
                 valueConverter: function(value) {
                     return (value/1024).toFixed(0);
                 }

@@ -78,7 +78,7 @@ Page {
                 dataType: [DataSource.NetworkCellRx]
                 dataDepth: deepView
                 scale: true
-                axisY.units: " KiB/s"
+                axisY.units: qsTr(" KiB/s")
                 //valueTotal: false
                 dataAvg: true
                 valueConverter: function(value) {
@@ -95,7 +95,7 @@ Page {
                 dataType: [DataSource.NetworkCellTx]
                 dataDepth: deepView
                 scale: true
-                axisY.units: " KiB/s"
+                axisY.units: qsTr(" KiB/s")
                 //valueTotal: false
                 dataAvg: true
                 valueConverter: function(value) {

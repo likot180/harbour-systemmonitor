@@ -55,27 +55,27 @@ ApplicationWindow
     ListModel {
         id: timeModel
         ListElement {
-            label: "30 seconds"
+            label: qsTr("30 seconds")
             interval: 30
         }
         ListElement {
-            label: "1 minute"
+            label: qsTr("1 minute")
             interval: 60
         }
         ListElement {
-            label: "2 minutes"
+            label: qsTr("2 minutes")
             interval: 120
         }
         ListElement {
-            label: "3 minutes"
+            label: qsTr("3 minutes")
             interval: 180
         }
         ListElement {
-            label: "5 minutes"
+            label: qsTr("5 minutes")
             interval: 300
         }
         ListElement {
-            label: "10 minutes"
+            label: qsTr("10 minutes")
             interval: 600
         }
     }
@@ -83,15 +83,15 @@ ApplicationWindow
     ListModel {
         id: archiveModel
         ListElement {
-            label: "7 days"
+            label: qsTr("7 days")
             interval: 7
         }
         ListElement {
-            label: "10 days"
+            label: qsTr("10 days")
             interval: 10
         }
         ListElement {
-            label: "14 days"
+            label: qsTr("14 days")
             interval: 14
         }
     }
@@ -99,47 +99,47 @@ ApplicationWindow
     ListModel {
         id: depthModel
         ListElement {
-            label: "1 hour"
-            interval: 1
+            label: qsTr("1 hour")
+            interval:  1
         }
         ListElement {
-            label: "4 hours"
+            label: qsTr("4 hours")
             interval: 4
         }
         ListElement {
-            label: "6 hours"
+            label: qsTr("6 hours")
             interval: 6
         }
         ListElement {
-            label: "8 hours"
+            label: qsTr("8 hours")
             interval: 8
         }
         ListElement {
-            label: "12 hours"
+            label: qsTr("12 hours")
             interval: 12
         }
         ListElement {
-            label: "24 hours"
+            label: qsTr("24 hours")
             interval: 24
         }
         ListElement {
-            label: "2 days"
+            label: qsTr("2 days")
             interval: 48
         }
         ListElement {
-            label: "3 days"
+            label: qsTr("3 days")
             interval: 72
         }
         ListElement {
-            label: "4 days"
+            label: qsTr("4 days")
             interval: 96
         }
         ListElement {
-            label: "1 week"
+            label: qsTr("1 week")
             interval: 168
         }
         ListElement {
-            label: "whole period"
+            label: qsTr("whole period")
             interval: 999
         }
     }
