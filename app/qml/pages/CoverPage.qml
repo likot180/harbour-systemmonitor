@@ -119,7 +119,7 @@ CoverBackground {
             dataDepth: 1
             scale: true
             axisX.grid: 1
-            axisY.units: " KiB/s"
+            axisY.units: qsTr("KiB/s")
             valueConverter: function(value) {
                 return (value/1024).toFixed(0);
             }
@@ -138,7 +138,7 @@ CoverBackground {
             dataAvg: true
             scale: true
             axisX.grid: 1
-            axisY.units: "MiB"
+            axisY.units: qsTr("MiB")
             valueConverter: function(value) {
                 return (value/1024).toFixed(0);
             }
@@ -232,7 +232,7 @@ CoverBackground {
         id: internetGraph
 
         SysMonGraph {
-            graphTitle: qsTr("INTERNET")
+            graphTitle: qsTr("WiFi")
             graphHeight: coverGraphHeight
             dataType: [DataSource.InternetPerc]
             dataDepth: 1
