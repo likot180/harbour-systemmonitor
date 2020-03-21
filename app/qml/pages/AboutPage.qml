@@ -25,12 +25,12 @@ Page {
 
             spacing: Theme.paddingLarge
             PageHeader {
-                title: "About"
+                title: qsTr("About")
             }
             Label {
                 x: Theme.paddingLarge
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "System Monitor"
+                text: qsTr("System Monitor")
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeLarge
             }
@@ -49,7 +49,7 @@ Page {
                 width: parent.width
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "System Monitor records and shows your phone usage detail stats."
+                text: qsTr("System Monitor records and shows your phone usage detail stats.")
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
             }
@@ -57,7 +57,7 @@ Page {
                 width: parent.width
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "You are able to see CPU, Memory, Battery and Traffic stats."
+                text: qsTr("You are able to see CPU, Memory, Battery and Traffic stats.")
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
             }
@@ -65,7 +65,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "<a href='#'>Web-site (OpenRepos) of official version</a>";
+                text: "<a href='#'>" + qsTr("Web-site (OpenRepos) of official version") + "</a>";
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally("https://openrepos.net/content/basil/system-monitor")
             }
@@ -73,7 +73,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "<a href='#'>Support forum (TMO) of official version</a>";
+                text: "<a href='#'>" + qsTr("Support forum (TMO) of official version") + "</a>";
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally("http://talk.maemo.org/showthread.php?t=93824")
             }
@@ -81,7 +81,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "<a href='#'>Source code (GitHub) of official version</a>";
+                text: "<a href='#'>" + qsTr("Source code (GitHub) of official version") + "</a>";
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally("https://github.com/custodian/harbour-systemmonitor")
             }
@@ -89,7 +89,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "<a href='#'>Source code (GitHub) of this version</a>";
+                text: "<a href='#'>" + qsTr("Source code (GitHub) of this version") + "</a>";
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally("https://github.com/a-dekker/harbour-systemmonitor")
             }
