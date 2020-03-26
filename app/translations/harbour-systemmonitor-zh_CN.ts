@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="zh_CN">
 <context>
     <name>AboutPage</name>
     <message>
@@ -88,7 +88,7 @@
     <message>
         <location filename="../qml/pages/CellPage.qml" line="58"/>
         <source>Show data for</source>
-        <translation显示数据 for></translation>
+        <translation>显示数据 for&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/CellPage.qml" line="76"/>
@@ -190,8 +190,7 @@
     <message>
         <location filename="../qml/pages/CpuPage.qml" line="128"/>
         <source>IO wait</source>
-        <translation>IO wait</source>
-        </translation>
+        <translation>IO wait</translation>
     </message>
 </context>
 <context>

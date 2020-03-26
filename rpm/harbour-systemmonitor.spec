@@ -14,12 +14,11 @@ Name:       harbour-systemmonitor
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    System Monitor
 Version:    0.6
-Release:    28
+Release:    29
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://thecust.net/
 Source0:    %{name}-%{version}.tar.bz2
-Source100:  harbour-systemmonitor.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Sql)
