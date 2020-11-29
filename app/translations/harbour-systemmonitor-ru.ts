@@ -4,42 +4,42 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="28"/>
+        <location filename="../qml/pages/AboutPage.qml" line="27"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="33"/>
+        <location filename="../qml/pages/AboutPage.qml" line="32"/>
         <source>System Monitor</source>
         <translation>Системный монитор</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="52"/>
+        <location filename="../qml/pages/AboutPage.qml" line="51"/>
         <source>System Monitor records and shows your phone usage detail stats.</source>
         <translation>Показывает и хранит статистику работы телефона.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="60"/>
+        <location filename="../qml/pages/AboutPage.qml" line="59"/>
         <source>You are able to see CPU, Memory, Battery and Traffic stats.</source>
         <translation>Вы можете посмотреть загрузку процессора, памяти, заряд аккумулятора и трафик сетей.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="68"/>
+        <location filename="../qml/pages/AboutPage.qml" line="67"/>
         <source>Web-site (OpenRepos) of official version</source>
         <translation>Страница базовой версии (OpenRepos)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="76"/>
+        <location filename="../qml/pages/AboutPage.qml" line="77"/>
         <source>Support forum (TMO) of official version</source>
         <translation>Форум базовой версии (ТМО)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="84"/>
+        <location filename="../qml/pages/AboutPage.qml" line="87"/>
         <source>Source code (GitHub) of official version</source>
         <translation>Исходный код базовой версии (GitHub)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="92"/>
+        <location filename="../qml/pages/AboutPage.qml" line="97"/>
         <source>Source code (GitHub) of this version</source>
         <translation>Исходный код этой версии (GitHub)</translation>
     </message>

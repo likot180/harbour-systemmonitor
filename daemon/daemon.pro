@@ -7,6 +7,7 @@ QT -= gui
 QT += dbus sql
 
 PKGCONFIG += mlite5 keepalive
+PKGCONFIG += contextkit-statefs
 QMAKE_CXXFLAGS += -std=c++0x
 
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"

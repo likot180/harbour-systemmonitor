@@ -4,42 +4,42 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="28"/>
+        <location filename="../qml/pages/AboutPage.qml" line="27"/>
         <source>About</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="33"/>
+        <location filename="../qml/pages/AboutPage.qml" line="32"/>
         <source>System Monitor</source>
         <translation>系统管理器</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="52"/>
+        <location filename="../qml/pages/AboutPage.qml" line="51"/>
         <source>System Monitor records and shows your phone usage detail stats.</source>
         <translation>系统管理器记录并显示你的手机使用详细数据。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="60"/>
+        <location filename="../qml/pages/AboutPage.qml" line="59"/>
         <source>You are able to see CPU, Memory, Battery and Traffic stats.</source>
         <translation>你可以看到处理器、内存、电池及流量数据。</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="68"/>
+        <location filename="../qml/pages/AboutPage.qml" line="67"/>
         <source>Web-site (OpenRepos) of official version</source>
         <translation>官方版本网站（Openrepos）</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="76"/>
+        <location filename="../qml/pages/AboutPage.qml" line="77"/>
         <source>Support forum (TMO) of official version</source>
         <translation>官方版本支持论坛（TMO）</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="84"/>
+        <location filename="../qml/pages/AboutPage.qml" line="87"/>
         <source>Source code (GitHub) of official version</source>
         <translation>官方版本源代码（Github）</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="92"/>
+        <location filename="../qml/pages/AboutPage.qml" line="97"/>
         <source>Source code (GitHub) of this version</source>
         <translation>该版本源代码（Github）</translation>
     </message>

@@ -1,17 +1,23 @@
 #include "datasourcesignal.h"
-#include <QString>
+#include <contextproperty.h>
 
+namespace {
+bool first_val = true;
+}
 DataSourceSignal::DataSourceSignal(SystemSnapshot *parent) :
-    DataSource(parent)
-{
-    m_signal = registerSystemSource("/run/state/namespaces/Cellular/SignalStrength");
+    DataSource(parent) {
+    static ContextProperty *prop =
+        new ContextProperty("Cellular.SignalStrength");
+    connect(prop, &ContextProperty::valueChanged, [this]() {
+        if (first_val) {
+            first_val = false;
+            return;
+        }
+        m_signal = prop->value().toInt();
+    });
     connect(parent, SIGNAL(processSystemSnapshot()), SLOT(processSystemSnapshot()));
 }
 
-void DataSourceSignal::processSystemSnapshot()
-{
-    const QByteArray &signalval = getSystemData(m_signal);
-    int signal = QString(signalval).toInt();
-
-    emit systemDataGathered(DataSource::SignalPerc, signal);
+void DataSourceSignal::processSystemSnapshot() {
+    emit systemDataGathered(DataSource::SignalPerc, m_signal);
 }

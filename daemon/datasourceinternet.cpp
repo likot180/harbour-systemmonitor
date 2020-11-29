@@ -1,15 +1,23 @@
 #include "datasourceinternet.h"
-#include <QString>
+#include <contextproperty.h>
 
+namespace {
+bool first_val = true;
+}
 DataSourceInternet::DataSourceInternet(SystemSnapshot *parent) :
     DataSource(parent) {
-    m_strength = registerSystemSource("/run/state/namespaces/Internet/SignalStrength");
+    static ContextProperty *prop =
+        new ContextProperty("Internet.SignalStrength");
+    connect(prop, &ContextProperty::valueChanged, [this]() {
+        if (first_val) {
+            first_val = false;
+            return;
+        }
+        m_strength = prop->value().toInt();
+    });
     connect(parent, SIGNAL(processSystemSnapshot()), SLOT(processSystemSnapshot()));
 }
 
 void DataSourceInternet::processSystemSnapshot() {
-    const QByteArray &strengthval = getSystemData(m_strength);
-    int strength = QString(strengthval).toInt();
-
-    emit systemDataGathered(DataSource::InternetPerc, strength);
+    emit systemDataGathered(DataSource::InternetPerc, m_strength);
 }

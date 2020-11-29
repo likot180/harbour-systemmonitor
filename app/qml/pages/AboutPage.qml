@@ -1,7 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-
 Page {
     id: page
 
@@ -17,7 +16,7 @@ Page {
         Column {
             id: column
 
-            anchors{
+            anchors {
                 left: parent.left
                 right: parent.right
                 margins: Theme.paddingLarge
@@ -36,7 +35,7 @@ Page {
             }
             Image {
                 anchors.horizontalCenter: parent.horizontalCenter
-                source: "/usr/share/icons/hicolor/86x86/apps/harbour-systemmonitor.png"
+                source: "image://theme/icon-l-diagnostic?" + Theme.primaryColor
             }
             Label {
                 x: Theme.paddingLarge
@@ -65,33 +64,41 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "<a href='#'>" + qsTr("Web-site (OpenRepos) of official version") + "</a>";
+                text: "<a href='#'>" + qsTr(
+                          "Web-site (OpenRepos) of official version") + "</a>"
                 linkColor: Theme.highlightColor
-                onLinkActivated: Qt.openUrlExternally("https://openrepos.net/content/basil/system-monitor")
+                onLinkActivated: Qt.openUrlExternally(
+                                     "https://openrepos.net/content/basil/system-monitor")
             }
             Text {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "<a href='#'>" + qsTr("Support forum (TMO) of official version") + "</a>";
+                text: "<a href='#'>" + qsTr(
+                          "Support forum (TMO) of official version") + "</a>"
                 linkColor: Theme.highlightColor
-                onLinkActivated: Qt.openUrlExternally("http://talk.maemo.org/showthread.php?t=93824")
+                onLinkActivated: Qt.openUrlExternally(
+                                     "http://talk.maemo.org/showthread.php?t=93824")
             }
             Text {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "<a href='#'>" + qsTr("Source code (GitHub) of official version") + "</a>";
+                text: "<a href='#'>" + qsTr(
+                          "Source code (GitHub) of official version") + "</a>"
                 linkColor: Theme.highlightColor
-                onLinkActivated: Qt.openUrlExternally("https://github.com/custodian/harbour-systemmonitor")
+                onLinkActivated: Qt.openUrlExternally(
+                                     "https://github.com/custodian/harbour-systemmonitor")
             }
             Text {
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeMedium
-                text: "<a href='#'>" + qsTr("Source code (GitHub) of this version") + "</a>";
+                text: "<a href='#'>" + qsTr(
+                          "Source code (GitHub) of this version") + "</a>"
                 linkColor: Theme.highlightColor
-                onLinkActivated: Qt.openUrlExternally("https://github.com/a-dekker/harbour-systemmonitor")
+                onLinkActivated: Qt.openUrlExternally(
+                                     "https://github.com/a-dekker/harbour-systemmonitor")
             }
             Text {
                 anchors.horizontalCenter: parent.horizontalCenter
