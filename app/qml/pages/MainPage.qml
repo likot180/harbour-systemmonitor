@@ -226,7 +226,7 @@ Page {
 
             SysMonGraph {
                 id: graphInternet
-                graphTitle: qsTr("Internet signal")
+                graphTitle: qsTr("Wlan signal")
                 graphHeight: Screen.width >= 1080 ? 350 : 200
                 dataType: [DataSource.InternetPerc]
                 minY: 0

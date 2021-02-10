@@ -1,6 +1,7 @@
 #ifndef DATASOURCESIGNAL_H
 #define DATASOURCESIGNAL_H
 
+#include <QtDBus>
 #include "datasource.h"
 #include "systemsnapshot.h"
 
@@ -15,6 +16,7 @@ signals:
 
 public slots:
     void processSystemSnapshot();
+    void getNetworkStatus(QDBusMessage reply);
 
 private:
     int m_signal;

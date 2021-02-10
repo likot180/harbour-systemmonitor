@@ -1,6 +1,7 @@
 #ifndef DATASOURCEINTERNET_H
 #define DATASOURCEINTERNET_H
 
+#include <QtDBus>
 #include "datasource.h"
 #include "systemsnapshot.h"
 
@@ -15,9 +16,11 @@ signals:
 
 public slots:
     void processSystemSnapshot();
+    void getWifiStrength(QDBusMessage reply);
 
 private:
     int m_strength;
+    QDBusObjectPath m_wifiPath;
 };
 
 #endif // DATASOURCEINTERNET_H

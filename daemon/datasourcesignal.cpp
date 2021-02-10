@@ -1,23 +1,44 @@
 #include "datasourcesignal.h"
-#include <contextproperty.h>
 
-namespace {
-bool first_val = true;
-}
-DataSourceSignal::DataSourceSignal(SystemSnapshot *parent) :
-    DataSource(parent) {
-    static ContextProperty *prop =
-        new ContextProperty("Cellular.SignalStrength");
-    connect(prop, &ContextProperty::valueChanged, [this]() {
-        if (first_val) {
-            first_val = false;
-            return;
-        }
-        m_signal = prop->value().toInt();
-    });
-    connect(parent, SIGNAL(processSystemSnapshot()), SLOT(processSystemSnapshot()));
+#include <QDBusConnection>
+#include <QDBusMessage>
+
+DataSourceSignal::DataSourceSignal(SystemSnapshot *parent)
+    : DataSource(parent) {
+    connect(parent, SIGNAL(processSystemSnapshot()),
+            SLOT(processSystemSnapshot()));
 }
 
 void DataSourceSignal::processSystemSnapshot() {
+    QDBusMessage m = QDBusMessage::createMethodCall(
+        "org.ofono", "/ril_0", "org.ofono.NetworkRegistration",
+        "GetProperties");
+    QDBusMessage reply = QDBusConnection::systemBus().call(m);
+    getNetworkStatus(reply);
     emit systemDataGathered(DataSource::SignalPerc, m_signal);
+}
+
+void DataSourceSignal::getNetworkStatus(QDBusMessage reply) {
+    const QDBusArgument &a = reply.arguments().at(0).value<QDBusArgument>();
+
+    m_signal = 0;
+
+    if (a.currentType() == QDBusArgument::MapType) {
+        a.beginMap();
+
+        while (!a.atEnd()) {
+            a.beginMapEntry();
+            QString t;
+            QVariant v;
+            a >> t >> v;
+
+            if (t == "Strength") {
+                m_signal = v.toInt();
+                // qDebug() << "Strength " << m_signal;
+            }
+
+            a.endMapEntry();
+        }
+        a.endMap();
+    }
 }

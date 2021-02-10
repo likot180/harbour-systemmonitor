@@ -14,7 +14,7 @@ Name:       harbour-systemmonitor
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    System Monitor
 Version:    0.6
-Release:    30
+Release:    41
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://thecust.net/
@@ -26,7 +26,6 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(keepalive)
-BuildRequires:  pkgconfig(contextkit-statefs)
 BuildRequires:  desktop-file-utils
 
 %description

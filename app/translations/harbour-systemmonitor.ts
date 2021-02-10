@@ -334,7 +334,7 @@
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="229"/>
-        <source>Internet signal</source>
+        <source>Wlan signal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -8,6 +8,14 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Feb 10 2021 Arno Dekker <a-dekker.git@gmail.com> 0.6-41
+- Now display broken internet signal graph as wlan signal
+
+* Wed Feb 10 2021 Arno Dekker <a-dekker.git@gmail.com> 0.6-40
+- Removed contextkit-statefs dependencies
+- Now use dbus signal info to read sim1 for cell signal
+- Internet signal graph still not working without statefs
+
 * Sat Nov 28 2020 Arno Dekker <a-dekker.git@gmail.com> 0.6-30
 - Replaced statefs by contextkit-statefs
 - Other icon on about page
