@@ -46,7 +46,8 @@ void DataSourceInternet::getWifiStrength(QDBusMessage reply) {
                 wifi.endMap();
                 wifi.endStructure();
             }
-            if (params["State"].toString() == "online") {
+            if (params["State"].toString() == "online" &&
+                params["Type"].toString() == "wifi") {
                 // qDebug() << "found wifi path at " << m_wifiPath.path();
                 m_strength = params["Strength"].toInt();
             }

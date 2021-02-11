@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu Feb 11 2021 Arno Dekker <a-dekker.git@gmail.com> 0.6-42
+- Wifi signal had old internet signal behaviour that it would show cell signal without wifi. Now it only shows wifi signal
+
 * Wed Feb 10 2021 Arno Dekker <a-dekker.git@gmail.com> 0.6-41
 - Now display broken internet signal graph as wlan signal
 
