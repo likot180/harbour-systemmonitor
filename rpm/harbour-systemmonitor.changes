@@ -8,6 +8,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Tue Feb 16 2021 Arno Dekker <a-dekker.git@gmail.com> 0.6-44
+- pre/post install actions should now be nemo/defaultuser independent
+
+* Tue Feb 16 2021 Arno Dekker <a-dekker.git@gmail.com> 0.6-43
+- Removed nemo related pre/post actions
+
 * Thu Feb 11 2021 Arno Dekker <a-dekker.git@gmail.com> 0.6-42
 - Wifi signal had old internet signal behaviour that it would show cell signal without wifi. Now it only shows wifi signal
 

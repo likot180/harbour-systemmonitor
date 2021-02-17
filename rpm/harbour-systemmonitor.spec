@@ -14,7 +14,7 @@ Name:       harbour-systemmonitor
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    System Monitor
 Version:    0.6
-Release:    42
+Release:    44
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://thecust.net/
@@ -65,26 +65,26 @@ desktop-file-install --delete-original       \
 
 %pre
 # >> pre
-su nemo -c "systemctl --user stop %{name}d"
+systemctl-user stop %{name}d
 exit 0
 # << pre
 
 %preun
 # >> preun
-su nemo -c "systemctl --user disable %{name}d"
-su nemo -c "systemctl --user stop %{name}d"
+systemctl-user disable %{name}d
+systemctl-user stop %{name}d
 # << preun
 
 %post
 # >> post
-su nemo -c "systemctl --user daemon-reload"
-su nemo -c "systemctl --user enable %{name}d"
-su nemo -c "systemctl --user start %{name}d"
+systemctl-user daemon-reload
+systemctl-user enable %{name}d
+systemctl-user start %{name}d
 # << post
 
 %postun
 # >> postun
-su nemo -c "systemctl --user daemon-reload"
+systemctl-user daemon-reload
 # << postun
 
 %files
