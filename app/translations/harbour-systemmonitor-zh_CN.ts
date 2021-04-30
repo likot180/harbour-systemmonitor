@@ -152,12 +152,12 @@
     <message>
         <location filename="../qml/pages/CoverPage.qml" line="216"/>
         <source>CELL1</source>
-        <translation type="unfinished"></translation>
+        <translation>蜂窝1</translation>
     </message>
     <message>
         <location filename="../qml/pages/CoverPage.qml" line="237"/>
         <source>CELL2</source>
-        <translation type="unfinished"></translation>
+        <translation>蜂窝2</translation>
     </message>
     <message>
         <location filename="../qml/pages/CoverPage.qml" line="258"/>
@@ -335,12 +335,12 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="216"/>
         <source>Cell signal (SIM 1)</source>
-        <translation type="unfinished"></translation>
+        <translation>蜂窝信号（SIM 1）</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="230"/>
         <source>Cell signal (SIM 2)</source>
-        <translation type="unfinished"></translation>
+        <translation>蜂窝信号（SIM 2）</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="244"/>
