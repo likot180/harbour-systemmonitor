@@ -110,53 +110,58 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <location filename="../qml/pages/CoverPage.qml" line="94"/>
+        <location filename="../qml/pages/CoverPage.qml" line="96"/>
         <source>CPU</source>
         <translation>ПРЦ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CoverPage.qml" line="113"/>
+        <location filename="../qml/pages/CoverPage.qml" line="115"/>
         <source>NET</source>
         <translation>СЕТЬ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CoverPage.qml" line="122"/>
+        <location filename="../qml/pages/CoverPage.qml" line="124"/>
         <source>KiB/s</source>
         <oldsource> KiB/s</oldsource>
         <translation>К</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CoverPage.qml" line="134"/>
+        <location filename="../qml/pages/CoverPage.qml" line="136"/>
         <source>RAM</source>
         <translation>ПМТ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CoverPage.qml" line="141"/>
+        <location filename="../qml/pages/CoverPage.qml" line="143"/>
         <source>MiB</source>
         <translation>М</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CoverPage.qml" line="153"/>
+        <location filename="../qml/pages/CoverPage.qml" line="155"/>
         <source>BAT</source>
         <translation>БАТ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CoverPage.qml" line="173"/>
+        <location filename="../qml/pages/CoverPage.qml" line="175"/>
         <source>SLP</source>
         <translation>СОН</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CoverPage.qml" line="193"/>
+        <location filename="../qml/pages/CoverPage.qml" line="195"/>
         <source>TEMP</source>
         <translation>Т°</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CoverPage.qml" line="214"/>
-        <source>CELL</source>
-        <translation>МОБ</translation>
+        <location filename="../qml/pages/CoverPage.qml" line="216"/>
+        <source>CELL1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CoverPage.qml" line="235"/>
+        <location filename="../qml/pages/CoverPage.qml" line="237"/>
+        <source>CELL2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CoverPage.qml" line="258"/>
         <source>INTERNET</source>
         <translation>ИНЕТ</translation>
     </message>
@@ -268,78 +273,83 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="75"/>
+        <location filename="../qml/pages/MainPage.qml" line="76"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="79"/>
+        <location filename="../qml/pages/MainPage.qml" line="80"/>
         <source>Settings</source>
         <translation>Настройка</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="90"/>
+        <location filename="../qml/pages/MainPage.qml" line="91"/>
         <source>System monitor</source>
         <translation>Системный монитор</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="95"/>
+        <location filename="../qml/pages/MainPage.qml" line="96"/>
         <source>Show data for</source>
         <translation>Данные за</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="111"/>
+        <location filename="../qml/pages/MainPage.qml" line="112"/>
         <source>Battery charge</source>
         <translation>Заряд аккумулятора</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="128"/>
+        <location filename="../qml/pages/MainPage.qml" line="129"/>
         <source>CPU usage</source>
         <translation>Загрузка процессора</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="145"/>
+        <location filename="../qml/pages/MainPage.qml" line="146"/>
         <source>RAM usage</source>
         <translation>Использование памяти</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="150"/>
+        <location filename="../qml/pages/MainPage.qml" line="151"/>
         <source> MiB</source>
         <translation> МиБ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="162"/>
+        <location filename="../qml/pages/MainPage.qml" line="163"/>
         <source>CPU sleep</source>
         <translation>Режим сна</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="179"/>
+        <location filename="../qml/pages/MainPage.qml" line="180"/>
         <source>Wlan traffic</source>
         <translation>WiFi данные</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="183"/>
-        <location filename="../qml/pages/MainPage.qml" line="201"/>
+        <location filename="../qml/pages/MainPage.qml" line="184"/>
+        <location filename="../qml/pages/MainPage.qml" line="202"/>
         <source> KiB/s</source>
         <translation> КиБ/с</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="197"/>
+        <location filename="../qml/pages/MainPage.qml" line="198"/>
         <source>Cell traffic</source>
         <translation>Мобильные данные</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="215"/>
-        <source>Cell signal</source>
-        <translation>Сигнал сотовой сети</translation>
+        <location filename="../qml/pages/MainPage.qml" line="216"/>
+        <source>Cell signal (SIM 1)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="229"/>
+        <location filename="../qml/pages/MainPage.qml" line="230"/>
+        <source>Cell signal (SIM 2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="244"/>
         <source>Wlan signal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="243"/>
+        <location filename="../qml/pages/MainPage.qml" line="258"/>
         <source>CPU temperature</source>
         <translation>Температура процессора</translation>
     </message>

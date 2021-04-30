@@ -15,7 +15,13 @@ void DataSourceSignal::processSystemSnapshot() {
         "GetProperties");
     QDBusMessage reply = QDBusConnection::systemBus().call(m);
     getNetworkStatus(reply);
-    emit systemDataGathered(DataSource::SignalPerc, m_signal);
+    emit systemDataGathered(DataSource::SignalPerc1, m_signal);
+    m = QDBusMessage::createMethodCall(
+        "org.ofono", "/ril_1", "org.ofono.NetworkRegistration",
+        "GetProperties");
+    reply = QDBusConnection::systemBus().call(m);
+    getNetworkStatus(reply);
+    emit systemDataGathered(DataSource::SignalPerc2, m_signal);
 }
 
 void DataSourceSignal::getNetworkStatus(QDBusMessage reply) {

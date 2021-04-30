@@ -38,7 +38,8 @@ Page {
             graphWlanTotal.updateGraph()
             graphCellTotal.updateGraph()
             graphTemperature.updateGraph()
-            graphSignal.updateGraph()
+            graphCellSignal1.updateGraph()
+            graphCellSignal2.updateGraph()
             graphInternet.updateGraph()
             needUpdate = false
         }
@@ -211,10 +212,24 @@ Page {
             }
 
             SysMonGraph {
-                id: graphSignal
-                graphTitle: qsTr("Cell signal")
+                id: graphCellSignal1
+                graphTitle: qsTr("Cell signal (SIM 1)")
                 graphHeight: Screen.width >= 1080 ? 350 : 200
-                dataType: [DataSource.SignalPerc]
+                dataType: [DataSource.SignalPerc1]
+                minY: 0
+                maxY: 100
+                axisY.units: " %"
+                dataAvg: true
+                valueConverter: function (value) {
+                    return (value).toFixed(0)
+                }
+            }
+
+            SysMonGraph {
+                id: graphCellSignal2
+                graphTitle: qsTr("Cell signal (SIM 2)")
+                graphHeight: Screen.width >= 1080 ? 350 : 200
+                dataType: [DataSource.SignalPerc2]
                 minY: 0
                 maxY: 100
                 axisY.units: " %"

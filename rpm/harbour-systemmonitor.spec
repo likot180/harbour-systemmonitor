@@ -14,7 +14,7 @@ Name:       harbour-systemmonitor
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    System Monitor
 Version:    0.6
-Release:    44
+Release:    45
 Group:      Qt/Qt
 License:    LICENSE
 URL:        http://thecust.net/
@@ -65,26 +65,26 @@ desktop-file-install --delete-original       \
 
 %pre
 # >> pre
-systemctl-user stop %{name}d
+systemctl-user stop %{name}d || true
 exit 0
 # << pre
 
 %preun
 # >> preun
-systemctl-user disable %{name}d
-systemctl-user stop %{name}d
+systemctl-user disable %{name}d || true
+systemctl-user stop %{name}d || true
 # << preun
 
 %post
 # >> post
-systemctl-user daemon-reload
-systemctl-user enable %{name}d
-systemctl-user start %{name}d
+systemctl-user daemon-reload || true
+systemctl-user enable %{name}d || true
+systemctl-user start %{name}d || true
 # << post
 
 %postun
 # >> postun
-systemctl-user daemon-reload
+systemctl-user daemon-reload || true
 # << postun
 
 %files

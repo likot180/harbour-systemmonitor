@@ -15,7 +15,7 @@ CoverBackground {
 
     function nextGraph() {
         needUpdate = true;
-        settings.coverGraphNum = (settings.coverGraphNum+1)%8
+        settings.coverGraphNum = (settings.coverGraphNum+1)%9
     }
 
     function updateGraph() {
@@ -62,8 +62,10 @@ CoverBackground {
                 case 5:
                     return temperatureGraph;
                 case 6:
-                    return signalGraph;
+                    return cellSignalGraph1;
                 case 7:
+                    return cellSignalGraph2;
+                case 8:
                     return internetGraph;
 
                 }
@@ -208,12 +210,33 @@ CoverBackground {
     }
 
     Component {
-        id: signalGraph
+        id: cellSignalGraph1
 
         SysMonGraph {
-            graphTitle: qsTr("CELL")
+            graphTitle: qsTr("CELL1")
             graphHeight: coverGraphHeight
-            dataType: [DataSource.SignalPerc]
+            dataType: [DataSource.SignalPerc1]
+            dataDepth: 1
+            dataAvg: true
+            axisX.grid: 1
+            minY: 0
+            maxY: 100
+            axisY.units: "%"
+            valueConverter: function(value) {
+                return value.toFixed(0);
+            }
+
+            clickEnabled: false
+        }
+    }
+
+    Component {
+        id: cellSignalGraph2
+
+        SysMonGraph {
+            graphTitle: qsTr("CELL2")
+            graphHeight: coverGraphHeight
+            dataType: [DataSource.SignalPerc2]
             dataDepth: 1
             dataAvg: true
             axisX.grid: 1

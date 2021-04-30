@@ -11,6 +11,20 @@ QMAKE_CXXFLAGS += -std=c++0x
 
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
+linux-g++{
+   !contains(QT_ARCH, arm64){
+       LIB=lib
+       message("Building for 32bit system")
+    } else {
+       LIB=lib64
+       message("Building for 64bit system")
+   }
+}
+linux-g++-32 {
+    message("Building for emulator / jolla tablet (i486)")
+    LIB=lib
+}
+
 SOURCES += \
     daemon.cpp \
     dbusadapter.cpp \
@@ -49,15 +63,12 @@ HEADERS += \
     datasourcesignal.h \
     datasourceinternet.h
 
-#OTHER_FILES += \
-#    net.thecust.systemmonitord.xml
-
 INSTALLS += target sysmond
 
 target.path = /usr/bin
 
 sysmond.files = $${TARGET}.service
-sysmond.path = /usr/lib/systemd/user
+sysmond.path = /usr/$${LIB}/systemd/user
 
 #qtcreator is bugged
 INCLUDEPATH += $$[QT_HOST_PREFIX]/include/mlite5

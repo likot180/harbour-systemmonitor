@@ -35,7 +35,8 @@ public:
         SuspendSuccess = 600,
         SuspendFail,
         TemperatureDeg,
-        SignalPerc,
+        SignalPerc1,
+        SignalPerc2,
         InternetPerc
     };
 
