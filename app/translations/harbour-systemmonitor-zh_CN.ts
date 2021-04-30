@@ -54,7 +54,7 @@
     <message>
         <location filename="../qml/pages/BatteryPage.qml" line="63"/>
         <source>Show data for</source>
-        <translation>显示数据 for</translation>
+        <translation>显示数据</translation>
     </message>
     <message>
         <location filename="../qml/pages/BatteryPage.qml" line="81"/>
@@ -88,7 +88,7 @@
     <message>
         <location filename="../qml/pages/CellPage.qml" line="58"/>
         <source>Show data for</source>
-        <translation>显示数据 for&gt;</translation>
+        <translation>显示数据</translation>
     </message>
     <message>
         <location filename="../qml/pages/CellPage.qml" line="76"/>
@@ -152,12 +152,12 @@
     <message>
         <location filename="../qml/pages/CoverPage.qml" line="214"/>
         <source>CELL</source>
-        <translation>CELL</translation>
+        <translation>蜂窝网络</translation>
     </message>
     <message>
         <location filename="../qml/pages/CoverPage.qml" line="235"/>
         <source>INTERNET</source>
-        <translation>INTERNET</translation>
+        <translation>互联网</translation>
     </message>
 </context>
 <context>
@@ -165,12 +165,12 @@
     <message>
         <location filename="../qml/pages/CpuPage.qml" line="57"/>
         <source>CPU statistics</source>
-        <translation>CPU数据</translation>
+        <translation>CPU 数据</translation>
     </message>
     <message>
         <location filename="../qml/pages/CpuPage.qml" line="62"/>
         <source>Show data for</source>
-        <translation>显示数据 for</translation>
+        <translation>显示数据</translation>
     </message>
     <message>
         <location filename="../qml/pages/CpuPage.qml" line="80"/>
@@ -190,7 +190,7 @@
     <message>
         <location filename="../qml/pages/CpuPage.qml" line="128"/>
         <source>IO wait</source>
-        <translation>IO wait</translation>
+        <translation>IO 等待</translation>
     </message>
 </context>
 <context>
@@ -199,17 +199,17 @@
         <location filename="../qml/pages/CpuSleepPage.qml" line="53"/>
         <location filename="../qml/pages/CpuSleepPage.qml" line="76"/>
         <source>CPU sleep</source>
-        <translation>CPU睡眠</translation>
+        <translation>CPU 睡眠</translation>
     </message>
     <message>
         <location filename="../qml/pages/CpuSleepPage.qml" line="58"/>
         <source>Show data for</source>
-        <translation>显示数据 for</translation>
+        <translation>显示数据</translation>
     </message>
     <message>
         <location filename="../qml/pages/CpuSleepPage.qml" line="94"/>
         <source>Suspend: success</source>
-        <translation>Suspend:成功</translation>
+        <translation>暂停:成功</translation>
     </message>
     <message>
         <location filename="../qml/pages/CpuSleepPage.qml" line="99"/>
@@ -220,7 +220,7 @@
     <message>
         <location filename="../qml/pages/CpuSleepPage.qml" line="111"/>
         <source>Suspend: failed</source>
-        <translation>Suspend:失败</translation>
+        <translation>暂停:失败</translation>
     </message>
 </context>
 <context>
@@ -238,17 +238,17 @@
     <message>
         <location filename="../qml/pages/DerivativeSettings.qml" line="46"/>
         <source>Automatic scale for Y on graph</source>
-        <translation>图表自动Y值</translation>
+        <translation>图表自动Y值尺寸</translation>
     </message>
     <message>
         <location filename="../qml/pages/DerivativeSettings.qml" line="47"/>
         <source>Scaled automatically</source>
-        <translation>自动范围</translation>
+        <translation>自动尺寸范围</translation>
     </message>
     <message>
         <location filename="../qml/pages/DerivativeSettings.qml" line="47"/>
         <source>Scaled manually</source>
-        <translation>手动范围</translation>
+        <translation>手动尺寸范围</translation>
     </message>
     <message>
         <location filename="../qml/pages/DerivativeSettings.qml" line="54"/>
@@ -284,7 +284,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="95"/>
         <source>Show data for</source>
-        <translation>显示数据 for</translation>
+        <translation>显示数据</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="111"/>
@@ -294,12 +294,12 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="128"/>
         <source>CPU usage</source>
-        <translation>CPU使用</translation>
+        <translation>CPU 使用</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="145"/>
         <source>RAM usage</source>
-        <translation>RAM使用</translation>
+        <translation>RAM 使用</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="150"/>
@@ -309,12 +309,12 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="162"/>
         <source>CPU sleep</source>
-        <translation>CPU睡眠</translation>
+        <translation>CPU 睡眠</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="179"/>
         <source>Wlan traffic</source>
-        <translation>Wlan通讯</translation>
+        <translation>Wlan 通讯</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="183"/>
@@ -335,12 +335,12 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="229"/>
         <source>Wlan signal</source>
-        <translation type="unfinished"></translation>
+        <translation>Wlan 信号</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="243"/>
         <source>CPU temperature</source>
-        <translation>CPU温度</translation>
+        <translation>CPU 温度</translation>
     </message>
 </context>
 <context>
@@ -348,12 +348,12 @@
     <message>
         <location filename="../qml/pages/RamPage.qml" line="52"/>
         <source>RAM usage</source>
-        <translation>RAM使用</translation>
+        <translation>RAM 使用</translation>
     </message>
     <message>
         <location filename="../qml/pages/RamPage.qml" line="57"/>
         <source>Show data for</source>
-        <translation>显示数据 for</translation>
+        <translation>显示数据</translation>
     </message>
     <message>
         <location filename="../qml/pages/RamPage.qml" line="75"/>
@@ -369,7 +369,7 @@
     <message>
         <location filename="../qml/pages/RamPage.qml" line="91"/>
         <source>Swap</source>
-        <translation>Swap</translation>
+        <translation>交换</translation>
     </message>
 </context>
 <context>
@@ -456,17 +456,17 @@ Shrink option will be added in future releases.</source>
     <message>
         <location filename="../qml/pages/WlanPage.qml" line="53"/>
         <source>Wlan networks</source>
-        <translation>Wlan网络</translation>
+        <translation>Wlan 网络</translation>
     </message>
     <message>
         <location filename="../qml/pages/WlanPage.qml" line="58"/>
         <source>Show data for</source>
-        <translation>显示数据 for</translation>
+        <translation>显示数据</translation>
     </message>
     <message>
         <location filename="../qml/pages/WlanPage.qml" line="76"/>
         <source>Received data</source>
-        <translation>接受数据</translation>
+        <translation>接收数据</translation>
     </message>
     <message>
         <location filename="../qml/pages/WlanPage.qml" line="81"/>
