@@ -26,6 +26,7 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(keepalive)
+BuildRequires:  pkgconfig(mlite5)
 BuildRequires:  desktop-file-utils
 
 %description
@@ -97,6 +98,6 @@ systemctl-user start %{name}d || true
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
-%{_libdir}/systemd/user/%{name}d.service
+%{_userunitdir}/%{name}d.service
 # >> files
 # << files
