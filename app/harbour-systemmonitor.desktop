@@ -5,3 +5,5 @@ Name=SysMon
 Icon=harbour-systemmonitor
 Exec=harbour-systemmonitor
 
+[X-Sailjail]
+Sandboxing=Disabled

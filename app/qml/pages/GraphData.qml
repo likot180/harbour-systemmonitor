@@ -7,8 +7,8 @@ import "."
 Item {
     id: root
     anchors {
-        left: (parent)? parent.left : undefined
-        right: (parent)? parent.right : undefined
+        left: (parent) ? parent.left : undefined
+        right: (parent) ? parent.right : undefined
     }
     height: graphHeight + (doubleAxisXLables ? Theme.itemSizeMedium : Theme.itemSizeSmall)
 
@@ -51,50 +51,51 @@ Item {
 
     property var points: []
     onPointsChanged: {
-        noData = (points.length == 0);
+        noData = (points.length == 0)
     }
     property bool noData: true
 
     function setPoints(data) {
-        if (!data) return;
+        if (!data)
+            return
 
-        var pointMaxY = 0;
+        var pointMaxY = 0
         if (data.length > 0) {
-            minX = data[0].x;
-            maxX = data[data.length-1].x;
+            minX = data[0].x
+            maxX = data[data.length - 1].x
         }
-        data.forEach(function(point) {
+        data.forEach(function (point) {
             if (point.y > pointMaxY) {
                 pointMaxY = point.y
             }
-        });
-        points = data;
+        })
+        points = data
         if (scale) {
-            maxY = pointMaxY * 1.20;
+            maxY = pointMaxY * 1.20
         }
-        doubleAxisXLables = ((maxX - minX) > 129600); // 1,5 days
+        doubleAxisXLables = ((maxX - minX) > 129600) // 1,5 days
 
-        canvas.requestPaint();
+        canvas.requestPaint()
     }
 
     function createYLabel(value) {
-        var v = value;
+        var v = value
         if (valueConverter) {
-            v = valueConverter(value);
+            v = valueConverter(value)
         }
-        return axisY.mask.arg(v);
+        return axisY.mask.arg(v)
     }
 
     function createXLabel(value) {
-        var d = new Date(value*1000);
-        return Qt.formatTime(d, axisX.mask);
+        var d = new Date(value * 1000)
+        return Qt.formatTime(d, axisX.mask)
     }
 
     Column {
         anchors {
             top: parent.top
             left: parent.left
-            leftMargin: 3*Theme.paddingLarge
+            leftMargin: 3 * Theme.paddingLarge
             right: parent.right
             rightMargin: Theme.paddingLarge
         }
@@ -128,7 +129,7 @@ Item {
                 id: backgroundArea
                 anchors.fill: parent
                 onClicked: {
-                    root.clicked();
+                    root.clicked()
                 }
             }
 
@@ -137,11 +138,12 @@ Item {
                 delegate: Label {
                     color: Theme.primaryColor
                     font.pixelSize: Theme.fontSizeLarge / 2
-                    text: createYLabel( (maxY-minY)/axisY.grid * index + minY)
+                    text: createYLabel(
+                              (maxY - minY) / axisY.grid * index + minY)
                     anchors {
                         top: (index == axisY.grid) ? parent.top : undefined
                         bottom: (index == axisY.grid) ? undefined : parent.bottom
-                        bottomMargin: (index) ? parent.height / axisY.grid * index - height/2 : 0
+                        bottomMargin: (index) ? parent.height / axisY.grid * index - height / 2 : 0
                         right: parent.left
                         rightMargin: Theme.paddingSmall
                     }
@@ -153,13 +155,14 @@ Item {
                 delegate: Label {
                     color: Theme.primaryColor
                     font.pixelSize: Theme.fontSizeLarge / 2
-                    text: createXLabel( (maxX-minX)/axisX.grid * index + minX )
+                    text: createXLabel(
+                              (maxX - minX) / axisX.grid * index + minX)
                     anchors {
                         top: parent.bottom
                         topMargin: Theme.paddingSmall
                         left: (index == axisX.grid) ? undefined : parent.left
                         right: (index == axisX.grid) ? parent.right : undefined
-                        leftMargin: (index) ? (parent.width / axisX.grid * index - width/2): 0
+                        leftMargin: (index) ? (parent.width / axisX.grid * index - width / 2) : 0
                     }
                     Label {
                         color: Theme.primaryColor
@@ -168,7 +171,9 @@ Item {
                             top: parent.bottom
                             horizontalCenter: parent.horizontalCenter
                         }
-                        text: Qt.formatDate(new Date( ((maxX-minX)/axisX.grid * index + minX) * 1000), "ddd");
+                        text: Qt.formatDate(
+                                  new Date(((maxX - minX) / axisX.grid * index + minX) * 1000),
+                                  "ddd")
                         visible: doubleAxisXLables
                     }
                 }
@@ -190,77 +195,74 @@ Item {
                 id: canvas
                 anchors {
                     fill: parent
-                    //leftMargin: Theme.paddingSmall
-                    //rightMargin: Theme.paddingSmall
                 }
 
-                //renderTarget: Canvas.FramebufferObject
-                //renderStrategy: Canvas.Threaded
+                // hack to get graphs back after losing app focus
+                onVisibleChanged: requestPaint()
 
                 property real stepX: lineWidth
-                property real stepY: (maxY-minY)/(height-2)
+                property real stepY: (maxY - minY) / (height - 2)
 
                 function drawGrid(ctx) {
-                    ctx.save();
+                    ctx.save()
 
-                    ctx.lineWidth = 1;
-                    ctx.strokeStyle = lineColor;
-                    ctx.globalAlpha = 0.4;
+                    ctx.lineWidth = 1
+                    ctx.strokeStyle = lineColor
+                    ctx.globalAlpha = 0.4
                     //i=0 and i=axisY.grid skipped, top/bottom line
-                    for (var i=1;i<axisY.grid;i++) {
-                        ctx.beginPath();
-                        ctx.moveTo(0, height/axisY.grid * i);
-                        ctx.lineTo(width, height/axisY.grid * i);
-                        ctx.stroke();
+                    for (var i = 1; i < axisY.grid; i++) {
+                        ctx.beginPath()
+                        ctx.moveTo(0, height / axisY.grid * i)
+                        ctx.lineTo(width, height / axisY.grid * i)
+                        ctx.stroke()
                     }
 
-                    ctx.restore();
+                    ctx.restore()
                 }
 
                 //TODO: allow multiple lines to be drawn
-                function drawPoints(ctx, points) {
-                }
+                function drawPoints(ctx, points) {}
 
                 onPaint: {
-                    var ctx = canvas.getContext("2d");
-                    ctx.globalCompositeOperation = "source-over";
-                    ctx.clearRect(0,0,width,height);
+                    var ctx = canvas.getContext("2d")
+                    ctx.globalCompositeOperation = "source-over"
+                    ctx.clearRect(0, 0, width, height)
 
                     //console.log("maxY", maxY, "minY", minY, "height", height, "StepY", stepY);
-
-                    var end = points.length;
+                    var end = points.length
 
                     if (end > 0) {
-                        drawGrid(ctx);
+                        drawGrid(ctx)
                     }
 
                     ctx.save()
-                    ctx.strokeStyle = lineColor;
+                    ctx.strokeStyle = lineColor
                     //ctx.globalAlpha = 0.8;
-                    ctx.lineWidth = lineWidth;
-                    ctx.beginPath();
-                    var x = -stepX;
-                    var valueSum = 0;
+                    ctx.lineWidth = lineWidth
+                    ctx.beginPath()
+                    var x = -stepX
+                    var valueSum = 0
                     for (var i = 0; i < end; i++) {
-                        valueSum += points[i].y;
-                        var y = height - Math.floor(points[i].y / stepY) - 1;
+                        valueSum += points[i].y
+                        var y = height - Math.floor(points[i].y / stepY) - 1
                         if (i == 0) {
-                            ctx.moveTo(x, y);
+                            ctx.moveTo(x, y)
                         } else {
-                            ctx.lineTo(x, y);
+                            ctx.lineTo(x, y)
                         }
-                        x+=stepX; //point[i].x can be used for grid title
+                        x += stepX //point[i].x can be used for grid title
                     }
-                    ctx.stroke();
-                    ctx.restore();
+                    ctx.stroke()
+                    ctx.restore()
 
                     if (end > 0) {
-                        var lastValue = valueSum;
+                        var lastValue = valueSum
                         if (!root.valueTotal) {
-                            lastValue = points[end-1].y;
+                            lastValue = points[end - 1].y
                         }
                         //if (lastValue) {
-                            labelLastValue.text = root.createYLabel(lastValue)+root.axisY.units;
+                        labelLastValue.text = root.createYLabel(
+                                    lastValue) + root.axisY.units
                         //}
                     }
                 }
@@ -270,7 +272,7 @@ Item {
                 id: textNoData
                 anchors.centerIn: parent
                 color: lineColor
-                text: qsTr("No data");
+                text: qsTr("No data")
                 visible: noData
             }
         }

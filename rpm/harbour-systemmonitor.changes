@@ -8,6 +8,16 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Jan 28 2023 Arno Dekker <a-dekker.git@gmail.com> 0.6-49
+- Force repaint graphs after losing focus to prevent empty graphs
+
+* Sun Nov 14 2021 Arno Dekker <a-dekker.git@gmail.com> 0.6-48
+- Opt out of sailjail
+
+* Sun May 23 2021 Arno Dekker <a-dekker.git@gmail.com> 0.6-47
+- Added mlite5 to buildrequires
+- Do not use lib64 path for systemd files on aarch64 systems
+
 * Tue Feb 16 2021 Arno Dekker <a-dekker.git@gmail.com> 0.6-46
 - Updated Chinese translation
 
@@ -95,5 +105,5 @@
 - Settings for archive length
 - Remember graphs choise
 
-* Mon Sep 9 2014 Basil Semuonov <basil.semuonov@gmail.com> 0.2-5
+* Mon Sep 8 2014 Basil Semuonov <basil.semuonov@gmail.com> 0.2-5
 - Initial release
